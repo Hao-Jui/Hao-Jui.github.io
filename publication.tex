@@ -1,0 +1,97 @@
+\documentclass[10pt,floatfix,a4paper]{article}
+\usepackage{mathrsfs,amsfonts,amssymb,amsmath}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage[linktocpage,breaklinks]{hyperref}
+\usepackage[capitalize]{cleveref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\hypersetup{colorlinks=true,
+            citecolor=NavyBlue,
+            linkcolor=magenta,
+            urlcolor=magenta}
+\usepackage{multirow,array}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+
+\usepackage{wrapfig}
+\usepackage[capitalize]{cleveref}
+\usepackage[legalpaper, margin=1in]{geometry}
+%\usepackage[symbol]{footmisc} % activate the use of * for electronic address
+
+\usepackage[sorting=none,style=numeric-comp,natbib]{biblatex}
+\addbibresource{references.bib} %Import the bibliography file
+
+\linespread{1}
+
+\usepackage{fancyhdr,lastpage}% http://ctan.org/pkg/{fancyhdr,graphicx,lastpage}
+\fancypagestyle{plain}{
+  \fancyhf{}% Clear header/footer
+  \fancyhead[L]{Publication List}
+  \fancyhead[R]{Hao-Jui Kuan}
+  %\fancyfoot[L]{Name Firstname - v1.0 \\  Date}% Left footer
+  \fancyfoot[C]{\thepage}% Right footer
+}
+\pagestyle{plain}
+
+\begin{document}
+
+
+\section*{Statisitc}
+\begin{tabular}{ l l r l}
+	Number of first author articles 	& ... & 11 \\
+	Refereed Articles 				& ... & 17 \\
+	Preprints/journal sumissoions 		& ... & 3  \\
+	h index (HEP-SPIRES) 				& ... & 10 \\
+\end{tabular}
+
+\section*{Peer reviewed}
+\begin{enumerate}
+	%
+	\item (1 citation) V. Brdar, T. Cheng, \textbf{H.-J. Kuan}, and Y.-Y. Li. Magnetar-powered neutrinos and magnetic moment signatures at IceCube. \href{https://iopscience.iop.org/article/10.1088/1475-7516/2024/07/026}{JCAP 07:026, July 2024}. 
+	%
+	\item (1 citation) A.~G.~Suvorov, \textbf{H.-J.~Kuan}, Alexis Reboul-Salze and K.~D.~Kokkotas. Magnetic amplification in pre-merger neutron stars through resonance-induced magnetorotational instabilities.  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.103023}{Phys.Rev.D 109:103023, May 2024}.
+	%
+	\item (4 citations) \textbf{H.-J.~Kuan} and K.~D.~Kokkotas. Last three seconds: Packed message delivered by tides in binary neutron star mergers. \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.063026}{Phys. Rev. D 108:063026, September 2023}. 
+	%
+	\item (9 citations) \textbf{H.-J.~Kuan}, K.~V.~Van Aelst, A.~T.~L.~Lam and M.~Shibata. Binary neutron star mergers in massive scalar-tensor theory: Quasiequilibrium states and dynamical enhancement of the scalarization. \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064057}{Phys. Rev. D 108:064057, September 2023}.
+	%
+	\item (4 citations) \textbf{H.-J.~Kuan}, A.~G.~Suvorov and K.~D.~Kokkotas. Measuring spin in coalescing binaries of neutron stars showing double precursors. \href{	https://doi.org/10.1051/0004-6361/202346658}{Astron. Astrophys., 676(2):A59, June 2023}.
+	%
+	\item (11 citations) \textbf{H.-J.~Kuan}, A.~T.~L.~Lam, D.~D.~Doneva, S.~S.~Yazadjiev, M.~Shibata and K.~Kiuchi. Dynamical scalarization during neutron star mergers in scalar-Gauss-Bonnet theory. \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.063033}{Phys. Rev. D 108:063033, September 2023}.
+	%
+	\item (14 citations) \textbf{H.-J.~Kuan} and K.~D.~Kokkotas. $f$-mode imprints on gravitational waves from coalescing binaries involving aligned spinning neutron stars. \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.106.064052}{Phys. Rev. D 106:064052, September 2022}.
+	%
+	\item (12 citations) \textbf{H.-J.~Kuan}, A.~G.~Suvorov, D.~D.~Doneva and S.~S.~Yazadjiev. Gravitational Waves from Accretion-Induced Descalarization in Massive Scalar-Tensor Theory. \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.121104}{Phys. Rev. Lett. 129:121104, September 2022}.
+	%
+	\item (18 citations) A.~G.~Suvorov, \textbf{H.-J.~Kuan} and K.~D.~Kokkotas. Quasi-periodic oscillations in precursor flares via seismic aftershocks from resonant shattering. \href{https://www.aanda.org/articles/aa/full_html/2022/08/aa44082-22/aa44082-22.html}{Astron. Astrophys. 664:A177, August 2022}.
+	%
+	\item (18 citations) \textbf{H.-J.~Kuan}, C.~J.~Kr{\"u}ger, A.~G.~Suvorov and K.~D.~Kokkotas. Constraining equation of state groups from $g$-mode asteroseismology. \href{https://doi.org/10.1093/mnras/stac1101}{MNRAS, 513(3):4045-4056, April 2022}.
+	%
+	\item (11 citations) \textbf{H.-J.~Kuan}, J.~Singh, D.~D.~Doneva, S.~S.~Yazadjiev, and K.~D.~Kokkotas. Nonlinear evolution and nonuniqueness of scalarized neutron stars. Phys. Rev. D, 104:124013, December 2021. \href{https://doi.org/10.1103/PhysRevD.104.124013}{10.1103/PhysRevD.104.124013}.
+	%
+	\item (19 citations) \textbf{H.-J.~Kuan}, A.~G.~Suvorov and K.~D.~Kokkotas. General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars. II. As triggers for precursor flares of short gamma-ray bursts. \href{https://doi.org/10.1093/mnras/stab2658}{MNRAS, 508(2):1732-1744, December 2021}.
+	%
+	\item (4 citations) D.~Huang, C.~Q.~Geng, and \textbf{H.-J.~Kuan}. Scalar gravitational wave signals from core collapse in massive scalar-tensor gravity with triple-scalar interactions. \href{https://doi.org/10.1088/1361-6382/ac35ab}{Class. Quant. Grav., 38:245006, November 2021}.
+	%
+	\item (42 citations) \textbf{H.-J.~Kuan}, D.~D.~Doneva, and S.~S.~Yazadjiev. Dynamical Formation of Scalarized Black Holes and Neutron Stars through Stellar Core Collapse. \href{https://doi.org/10.1103/PhysRevLett.127.161103}{Phys. Rev. Lett., 127:161103, October 2021}.
+	%
+	\item (26 citations) \textbf{H.-J.~Kuan}, A.~G.~Suvorov, and K.~D.~Kokkotas. General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars - I. Theoretical framework and crust breaking. \href{https://doi.org/10.1093/mnras/stab1898}{MNRAS, 506(2):2985–2998, September 2021}.
+	%
+	\item (10 citations) C.~Q.~Geng, \textbf{H.-J.~Kuan}, and L.~W.~Luo. Inverse-chirp imprint of gravitational wave signals in scalar tensor theory. \href{https://doi.org/10.1140/epjc/s10052-020-8359-y}{Eur. Phys. J. C, 80:780, August 2020}.
+	%
+	\item (6 citations) C.~Q.~Geng, \textbf{H.-J.~Kuan}, and L.~W.~Luo. Viable Constraint on Scalar Field in Scalar-Tensor Theory.	\href{https://doi.org/10.1088/1361-6382/ab86fb}{Class. Quant. Grav., 37:115001, May 2020}.
+\end{enumerate}
+
+
+
+\section*{Preprints}
+\begin{enumerate}
+	\item A. T.-L. Lam, Yong Gao, \textbf{H.-J. Kuan}, M. Shibata, K. Van Aelst, K. Kiuchi. Accessing universal relations of binary neutron star waveforms in massive scalar-tensor theory. \href{https://arxiv.org/abs/2410.00137 }{arXiv:2410.00137 }
+	\item A. G. Suvorov, \textbf{H.-J. Kuan}, K. D. Kokkotas. Premerger phenomena in neutron-star binary coalescences. \href{https://arxiv.org/abs/2408.16283}{arXiv:2408.16283 }
+	\item (3 citations) A. T.-L. Lam, \textbf{H.-J. Kuan}, M. Shibata, K. Van Aelst, K. Kiuchi. Binary neutron star mergers in massive scalar-tensor theory: Properties of post-merger remnants. \href{https://arxiv.org/abs/2406.05211}{arXiv:2406.05211}
+\end{enumerate}
+
+
+
+
+
+\end{document}
