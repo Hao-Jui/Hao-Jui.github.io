@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kadath_AEI — Announcement</title>
+<title>Kadath-AEI — Announcement</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0d14;
-    --surface: #111622;
-    --border: #1e2a3a;
-    --accent: #4fc3f7;
-    --accent2: #7c4dff;
-    --gold: #ffd740;
-    --text: #cdd6e0;
-    --muted: #5a6a7a;
-    --green: #69f0ae;
+    --bg:      #ffffff;
+    --surface: #f5f6f8;
+    --border:  #dde1e7;
+    --accent:  #2c5f8a;
+    --accent2: #4a6fa5;
+    --gold:    #b45309;
+    --text:    #1e2329;
+    --muted:   #6b7280;
+    --green:   #047857;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +34,7 @@
     position: fixed;
     top: -200px; right: -200px;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(76,195,247,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(44,95,138,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -103,10 +103,11 @@
   }
 
   h1 {
+    font-family: 'JetBrains Mono', monospace;
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 800;
     line-height: 1.1;
-    color: #fff;
+    color: var(--text);
     letter-spacing: -0.02em;
   }
 
@@ -218,11 +219,11 @@
   code {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.82em;
-    background: rgba(76,195,247,0.1);
+    background: rgba(44,95,138,0.1);
     color: var(--accent);
     padding: 2px 7px;
     border-radius: 4px;
-    border: 1px solid rgba(76,195,247,0.2);
+    border: 1px solid rgba(44,95,138,0.2);
     word-break: break-all;
   }
 
@@ -261,7 +262,7 @@
 
   /* CTA */
   .cta {
-    background: linear-gradient(135deg, rgba(76,195,247,0.07), rgba(124,77,255,0.07));
+    background: linear-gradient(135deg, rgba(44,95,138,0.07), rgba(74,111,165,0.07));
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 22px 28px;
@@ -285,7 +286,7 @@
   .cta-text strong { color: var(--green); }
 
   /* Highlight inline */
-  .hi { color: #fff; font-weight: 700; }
+  .hi { color: var(--text); font-weight: 700; }
   .hi-gold { color: var(--gold); font-weight: 700; }
   .hi-green { color: var(--green); font-weight: 700; }
 
@@ -302,12 +303,12 @@
 
   <div class="header">
     <div class="tag">Internal Announcement · AEI</div>
-    <h1>Introducing <span>Kadath_AEI</span></h1>
+    <h1>Introducing <span>Kadath-AEI</span></h1>
     <p class="subtitle">A privately maintained branch of FUKA — built for longevity.</p>
   </div>
 
   <div class="intro">
-    We are establishing a <span class="hi">private branch of FUKA</span> maintained within our group. This codebase, named <span class="hi">Kadath_AEI</span>, is built upon the FUKA API while emphasizing usage of the <span class="hi">Kadath library</span>.
+    We are establishing a <span class="hi">private branch of FUKA</span> maintained within our group. This codebase, named <span class="hi">Kadath-AEI</span>, is built upon the FUKA API while emphasizing usage of the <span class="hi">Kadath library</span>.
   </div>
 
   <!-- Performance metrics -->
@@ -341,7 +342,7 @@
   <div class="card">
     <div class="card-title">Access &amp; Setup</div>
     <p>The code is currently located at:</p>
-    <p style="margin-top:10px;"><code>/sakura/ptmp/haojk/Kadath_AEI</code></p>
+    <p style="margin-top:10px;"><code>/sakura/ptmp/haojk/Kadath-AEI</code></p>
     <p style="margin-top:14px;">Usage has been simplified from the original FUKA — tailored build scripts are already prepared. Follow these steps:</p>
     <div class="steps" style="margin-top:16px;">
       <div class="step">
@@ -350,7 +351,7 @@
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Navigate to a specific solver, e.g. <code>Kadath_AEI/codes/FUKa_AEI/BNS</code>, and run <code>./cmake_make_codes.sh</code></div>
+        <div class="step-text">Navigate to a specific solver, e.g. <code>Kadath-AEI/codes/FUKa_AEI/BNS</code>, and run <code>./cmake_make_codes.sh</code></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
