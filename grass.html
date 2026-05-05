@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRASS - Codebase Introduction</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Syne:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfcfd;
+    --surface: #f3f6f8;
+    --surface-strong: #eaf0f3;
+    --border: #d9e1e6;
+    --accent: #2d6f73;
+    --accent2: #52796f;
+    --gold: #a45f16;
+    --text: #1f2528;
+    --muted: #65737b;
+    --green: #276749;
+    --code: #eef7f4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background:
+      linear-gradient(180deg, rgba(45,111,115,0.04) 0, transparent 260px),
+      var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    padding: 48px 24px 64px;
+    overflow-x: hidden;
+  }
+
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeUp 0.65s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    margin-bottom: 42px;
+    text-transform: uppercase;
+  }
+
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '<'; font-weight: 800; }
+
+  .header {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 44px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tag::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.34; }
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .intro,
+  .card,
+  .cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .intro {
+    padding: 24px 28px;
+    margin-bottom: 34px;
+    font-size: 0.99rem;
+    line-height: 1.75;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    min-height: 112px;
+  }
+
+  .metric:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .metric .value {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gold);
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric .label {
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .card {
+    padding: 24px 28px;
+    margin-bottom: 18px;
+  }
+
+  .card-title {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .card-title::before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .card p,
+  .step-text {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .card p + p { margin-top: 12px; }
+
+  .grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    background: var(--code);
+    color: var(--accent);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(45,111,115,0.18);
+    word-break: break-word;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--bg);
+    background: var(--accent);
+    border-radius: 4px;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 10px;
+  }
+
+  .cta {
+    margin-top: 22px;
+    padding: 22px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    box-shadow: inset 3px 0 0 var(--green);
+  }
+
+  .cta-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    color: var(--green);
+    border: 1px solid rgba(39,103,73,0.3);
+    border-radius: 6px;
+    padding: 5px 8px;
+    line-height: 1;
+  }
+
+  .cta-text {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .hi { font-weight: 700; }
+  .hi-accent { color: var(--accent); font-weight: 700; }
+  .hi-gold { color: var(--gold); font-weight: 700; }
+  .hi-green { color: var(--green); font-weight: 700; }
+
+  @media (max-width: 720px) {
+    body { padding: 34px 18px 48px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .grid-two { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 460px) {
+    .metrics { grid-template-columns: 1fr; }
+    .intro, .card, .cta { padding: 20px; }
+    .cta { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <a href="README.md" class="back-link">Back to README</a>
+
+  <div class="header">
+    <div class="tag">Codebase Brief / Fortran 2003</div>
+    <h1>Introducing <span>GRASS</span></h1>
+    <p class="subtitle">General Relativistic Axisymmetric Spacetime Solver for rotating neutron-star equilibria in GR and Scalar-Tensor gravity.</p>
+  </div>
+
+  <div class="intro">
+    <span class="hi">GRASS</span> computes axisymmetric neutron-star equilibrium models on a compactified meridional grid. It combines tabulated EOS handling, Newton shooting targets, adaptive field relaxation, and diagnostic output for reproducible relativistic stellar-structure runs.
+  </div>
+
+  <div class="metrics" aria-label="Repository highlights">
+    <div class="metric">
+      <div class="value">63</div>
+      <div class="label">Fortran source and test files</div>
+    </div>
+    <div class="metric">
+      <div class="value">21</div>
+      <div class="label">EOS tables and examples</div>
+    </div>
+    <div class="metric">
+      <div class="value">12</div>
+      <div class="label">Unit tests across numerics and modules</div>
+    </div>
+    <div class="metric">
+      <div class="value">6</div>
+      <div class="label">Regression-backed integration scenarios</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What It Solves</div>
+    <p>
+      GRASS builds uniformly and differentially rotating neutron-star equilibria under <span class="hi-accent">General Relativity</span> or <span class="hi-accent">Scalar-Tensor</span> gravity. The main workflow reads an EOS table, constructs the grid, relaxes the metric and scalar fields, then reports bulk quantities such as mass, baryon mass, angular momentum, spin, and radius.
+    </p>
+    <p>
+      The solver supports single-model runs, shooting against target properties, and mass-radius sequence construction.
+    </p>
+  </div>
+
+  <div class="grid-two">
+    <div class="card">
+      <div class="card-title">Numerical Core</div>
+      <p>
+        Core modules provide EOS interpolation, compactified grids, restart I/O, constraint checks, and 1D / 2D shooting drivers. Theory modules own the rotation solver, Green's-function targets, multipole projection, and metric-field updates.
+      </p>
+      <div class="pill-row">
+        <span class="pill">PCHIP EOS</span>
+        <span class="pill">Newton shooting</span>
+        <span class="pill">Restart binary</span>
+        <span class="pill">Hamiltonian check</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Relaxation Strategy</div>
+      <p>
+        The field solve uses an adaptive four-stage relaxation path: <span class="hi-gold">Picard</span>, <span class="hi-gold">Chebyshev</span>, <span class="hi-gold">Anderson</span>, and <span class="hi-gold">Aitken delta-squared</span>. This keeps early iterations stable while accelerating late-stage convergence.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Run Flow</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Configure physics, EOS, grid resolution, and task mode in <code>src/para_panel.f90</code>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Build with CMake using <code>cmake --preset release</code> and <code>cmake --build build -j</code>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Run <code>./build/grass</code> to produce diagnostics under <code>Cont/</code> and restart data under <code>Res/res.rst</code>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Verify behavior with <code>ctest --test-dir build --output-on-failure</code>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Diagnostics</div>
+    <p>
+      Output files include <code>properties.dat</code> for bulk quantities, <code>Omega.dat</code> for equatorial profiles, <code>velocity.dat</code> for orbital diagnostics, <code>hamiltonian.dat</code> for constraint fields, and <code>moment_tail.dat</code> for far-field multipoles.
+    </p>
+  </div>
+
+  <div class="cta">
+    <div class="cta-mark">GR</div>
+    <div class="cta-text">
+      Start from <code>README.md</code> for build instructions, then inspect <code>src/para_panel.f90</code> before production runs. The current branch is <span class="hi-green">dev</span>, with CMake as the recommended build path and legacy Make support preserved.
+    </div>
+  </div>
+</div>
+</body>
+</html>

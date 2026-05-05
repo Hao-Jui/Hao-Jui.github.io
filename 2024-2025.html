@@ -1,62 +1,150 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications 2024–2025 — Hao-Jui Kuan</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #ffffff;
+    --surface: #f5f6f8;
+    --border:  #dde1e7;
+    --accent:  #2c5f8a;
+    --text:    #1e2329;
+    --muted:   #6b7280;
+  }
 
-  <div id="wrapper">
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!-- Main -->
-	<section id="main" class="wrapper">
-	<div class="inner">
-              
-		<p><a href="/2024-25/PhysRevD.109.103023.pdf">
-            	16. Magnetic amplification in premerger neutron stars through resonance-induced magnetorotational instabilities
-			 
-		<p><a href="/2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf">
-                17. Magnetar-powered neutrinos and magnetic moment signatures at IceCube
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
 
-		<p><a href="/2024-25/PhysRevD.110.104018.pdf">
-				18. Binary neutron star mergers in massive scalar-tensor theory: Properties of postmerger remnants
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(44,95,138,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
 
-		<p><a href="/2024-25/universe-10-00441.pdf">
-				19. Premerger Phenomena in Neutron Star Binary Coalescences
+  .wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+  }
 
-		<p><a href="/2024-25/PhysRevLett.134.151402.pdf">
-				20. Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-		<p><a href="/2024-25/PhysRevD.111.104030.pdf">
-				21. Axisymmetric stability of neutron stars as extreme rotators in massive scalar-tensor theory
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '\2190';  font-size: 1rem; }
 
-		<p><a href="/2024-25/j3zk-z17h.pdf">
-				22. Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity
+  .header {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
 
-		<p><a href="/2024-25/j3zk-z17h.pdf">
-				23. Non-linear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars
-				
-		<p><a href="/2024-25/nbk7-8kts.pdf">
-				24. Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries
-		</a></p>
-     	</a></p>
-		25. Convective stability analysis of massive neutron stars formed in binary mergers
-		26. The error budget of binary neutron star merger simulations for configurations with high spin
-		27. g-mode resonance in dissipative and reactive neutron stars during inspirals
+  ol.papers {
+    list-style: none;
+    counter-reset: paper;
+    border-top: 1px solid var(--border);
+  }
+  ol.papers li {
+    counter-increment: paper;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0 18px 56px;
+    position: relative;
+    line-height: 1.45;
+  }
+  ol.papers li::before {
+    content: counter(paper, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  ol.papers a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  ol.papers a:hover { color: var(--accent); }
+  ol.papers .nolink {
+    color: var(--muted);
+    font-style: italic;
+  }
+  ol.papers .nolink::after {
+    content: ' (in preparation / preprint)';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    margin-left: 8px;
+    color: var(--muted);
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <a href="index.html" class="back-link">back to home</a>
+    <div class="header">
+      <div class="tag">Publications &middot; 2024–2025</div>
+      <h1>Papers from 2024–2025</h1>
+    </div>
+    <ol class="papers" start="16">
+      <li><a href="/2024-25/PhysRevD.109.103023.pdf">Magnetic amplification in premerger neutron stars through resonance-induced magnetorotational instabilities</a></li>
+      <li><a href="/2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf">Magnetar-powered neutrinos and magnetic moment signatures at IceCube</a></li>
+      <li><a href="/2024-25/PhysRevD.110.104018.pdf">Binary neutron star mergers in massive scalar-tensor theory: Properties of postmerger remnants</a></li>
+      <li><a href="/2024-25/universe-10-00441.pdf">Premerger Phenomena in Neutron Star Binary Coalescences</a></li>
+      <li><a href="/2024-25/PhysRevLett.134.151402.pdf">Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory</a></li>
+      <li><a href="/2024-25/PhysRevD.111.104030.pdf">Axisymmetric stability of neutron stars as extreme rotators in massive scalar-tensor theory</a></li>
+      <li><a href="/2024-25/j3zk-z17h.pdf">Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity</a></li>
+      <li><a href="/2024-25/j3zk-z17h.pdf">Non-linear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars</a></li>
+      <li><a href="/2024-25/nbk7-8kts.pdf">Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries</a></li>
+      <li><span class="nolink">Convective stability analysis of massive neutron stars formed in binary mergers</span></li>
+      <li><span class="nolink">The error budget of binary neutron star merger simulations for configurations with high spin</span></li>
+      <li><span class="nolink">g-mode resonance in dissipative and reactive neutron stars during inspirals</span></li>
+    </ol>
   </div>
-	</section>
-
-  </div>
-    
-
-
-  </body>
+</body>
 </html>

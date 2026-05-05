@@ -3,6 +3,8 @@ data/
 *.fls
 *Notes.bib
 *.synctex.gz
+*.bcf
+*.run.xml
 *.aux
 *.bbl
 *.blg

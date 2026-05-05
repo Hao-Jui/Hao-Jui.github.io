@@ -1,55 +1,146 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications 2022–2023 — Hao-Jui Kuan</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #ffffff;
+    --surface: #f5f6f8;
+    --border:  #dde1e7;
+    --accent:  #2c5f8a;
+    --text:    #1e2329;
+    --muted:   #6b7280;
+  }
 
-  <div id="wrapper">
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!-- Main -->
-	<section id="main" class="wrapper">
-	<div class="inner">
-              
-		<p><a href="/2022-23/PhysRevLett.129.121104.pdf">
-                8. Gravitational Waves from Accretion-Induced Descalarization in Massive Scalar-Tensor Theory
-              </a></p>
-		<p><a href="/2022-23/stac1101.pdf">
-                9. Constraining equation-of-state groups from g-mode asteroseismology
-              </a></p>
-		<p><a href="/2022-23/PhysRevD.106.064052.pdf">
-                10. f-mode imprints on gravitational waves from coalescing binaries involving aligned spinning neutron stars
-              </a></p>
-		<p><a href="/2022-23/aa44082-22.pdf">
-                11. Quasi-periodic oscillations in precursor flares via seismic aftershocks from resonant shattering
-              </a></p>
-		<p><a href="/2022-23/PhysRevD.108.063033.pdf">
-                12. Dynamical scalarization during neutron star mergers in scalar-Gauss-Bonnet theory
-              </a></p>
-		<p><a href="/2022-23/aa46658-23.pdf">
-                13. Measuring spin in coalescing binaries of neutron stars that show double precursors
-              </a></p>
-		<p><a href="/2022-23/PhysRevD.108.064057.pdf">
-                14. Binary neutron star mergers in massive scalar-tensor theory: Quasiequilibrium states and dynamical enhancement of the scalarization
-              </a></p>
-		<p><a href="/2022-23/PhysRevD.108.063026.pdf">
-                15. Last three seconds: Packed message delivered by tides in binary neutron star mergers
-              </a></p>
-            </div>
-	</section>
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
 
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(44,95,138,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '\2190';  font-size: 1rem; }
+
+  .header {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  ol.papers {
+    list-style: none;
+    counter-reset: paper;
+    border-top: 1px solid var(--border);
+  }
+  ol.papers li {
+    counter-increment: paper;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0 18px 56px;
+    position: relative;
+    line-height: 1.45;
+  }
+  ol.papers li::before {
+    content: counter(paper, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  ol.papers a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  ol.papers a:hover { color: var(--accent); }
+  ol.papers .nolink {
+    color: var(--muted);
+    font-style: italic;
+  }
+  ol.papers .nolink::after {
+    content: ' (in preparation / preprint)';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    margin-left: 8px;
+    color: var(--muted);
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <a href="index.html" class="back-link">back to home</a>
+    <div class="header">
+      <div class="tag">Publications &middot; 2022–2023</div>
+      <h1>Papers from 2022–2023</h1>
+    </div>
+    <ol class="papers" start="8">
+      <li><a href="/2022-23/PhysRevLett.129.121104.pdf">Gravitational Waves from Accretion-Induced Descalarization in Massive Scalar-Tensor Theory</a></li>
+      <li><a href="/2022-23/stac1101.pdf">Constraining equation-of-state groups from g-mode asteroseismology</a></li>
+      <li><a href="/2022-23/PhysRevD.106.064052.pdf">f-mode imprints on gravitational waves from coalescing binaries involving aligned spinning neutron stars</a></li>
+      <li><a href="/2022-23/aa44082-22.pdf">Quasi-periodic oscillations in precursor flares via seismic aftershocks from resonant shattering</a></li>
+      <li><a href="/2022-23/PhysRevD.108.063033.pdf">Dynamical scalarization during neutron star mergers in scalar-Gauss-Bonnet theory</a></li>
+      <li><a href="/2022-23/aa46658-23.pdf">Measuring spin in coalescing binaries of neutron stars that show double precursors</a></li>
+      <li><a href="/2022-23/PhysRevD.108.064057.pdf">Binary neutron star mergers in massive scalar-tensor theory: Quasiequilibrium states and dynamical enhancement of the scalarization</a></li>
+      <li><a href="/2022-23/PhysRevD.108.063026.pdf">Last three seconds: Packed message delivered by tides in binary neutron star mergers</a></li>
+    </ol>
   </div>
-    
-
-
-  </body>
+</body>
 </html>
