@@ -38,14 +38,7 @@
       height: 56px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      text-decoration: none;
+      justify-content: flex-end;
     }
 
     .nav-links {
@@ -399,7 +392,6 @@
 
 <!-- Navbar -->
 <nav class="navbar">
-  <a href="#hero" class="nav-name">Hao-Jui Kuan</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
@@ -458,21 +450,26 @@
   <div class="container">
     <h2>Research</h2>
     <p class="research-intro">
-      My work centers on probing the equation of state of nuclear matter and testing gravity
-      in the strong-field regime using gravitational waves from neutron star mergers. I study
-      how structural properties of neutron stars &mdash; tidal responses, quasi-normal mode
-      spectra, elastic crusts, and rotation &mdash; imprint on the gravitational waveform,
-      both in general relativity and in modified theories of gravity.
+      I study what neutron stars are made of, and whether gravity behaves as general relativity
+      predicts, through the signals these stars emit before, during, and after coalescence. The
+      work spans relativistic stellar oscillations, quasiequilibrium initial data, fully
+      relativistic merger simulations, waveform construction, and the interpretation of
+      high-energy transients. In each case the aim is the same: identify a physical effect,
+      predict its observable signature, quantify the modelling uncertainty that would obscure
+      it, and establish what a detection &mdash; or a principled nondetection &mdash; would
+      teach us.
     </p>
     <div class="research-grid">
       <div class="r-card">
-        <h3>Precursor flares of short gamma-ray bursts</h3>
+        <h3>Tidal resonances and premerger transients</h3>
         <p>
-          A few precursor flares have been detected for SGRBs, possibly linked to tidal
-          resonances in coalescing binaries. As the orbital frequency sweeps through a
-          stellar mode frequency, resonant excitation stresses the crust to the breaking
-          point. Matching precursor timing to mode frequencies enables asteroseismology of
-          the flaring star, constraining the nuclear equation of state and stellar spin.
+          During inspiral the orbital frequency sweeps through a neutron star's oscillation
+          spectrum, and resonant excitation of g-, f-, and shear modes can stress the crust to
+          failure, redistribute angular momentum, and amplify the magnetic field. I developed
+          the general-relativistic framework for these resonances and use precursor flare
+          timings &mdash; including quasi-periodic features observed in short gamma-ray burst
+          precursors &mdash; to perform asteroseismology on the flaring star, constraining its
+          spin and the nuclear equation of state.
         </p>
         <p>
           Recent nonlinear simulations further reveal
@@ -481,13 +478,40 @@
         </p>
       </div>
       <div class="r-card">
-        <h3>Waveforms of binary neutron stars in GR and beyond</h3>
+        <h3>Precision waveforms in numerical relativity</h3>
         <p>
-          Gravitational waves encode orbital dynamics and tidal physics with high purity.
-          I investigate late-time waveform contributions &mdash; dynamical tides, f-mode
-          imprints, and post-merger signatures &mdash; in both general relativity and modified
-          gravity. Exclusive signatures of beyond-GR theories can serve as unambiguous tests
-          of the fundamental nature of gravity.
+          Numerical accuracy is part of the physics: a waveform cannot reveal a subtle tide or
+          a modification of gravity unless its error budget is smaller than the effect. I
+          quantify uncertainties from grid resolution, wave extraction, initial-data solver,
+          and evolution code in binary neutron star simulations, and use fully relativistic
+          evolutions of tidal resonance to test where linear-response descriptions of the
+          dynamical tide cease to hold. Residuals against analytic approximants then become
+          diagnostics of missing physics rather than of numerical noise.
+        </p>
+      </div>
+      <div class="r-card">
+        <h3>Strong-field gravity and scalarization</h3>
+        <p>
+          Dynamical compact stars probe gravity in regimes inaccessible to weak-field
+          experiments. I study scalarization and descalarization in massive scalar-tensor and
+          scalar-Gauss-Bonnet theories: their formation through core collapse and accretion,
+          their nonlinear stability and nonuniqueness, and their imprint on quasiequilibrium
+          binaries, merger waveforms, and postmerger remnants. Because a scalar field and an
+          uncertain equation of state can shift the same observables, I emphasize combining
+          inspiral, collapse threshold, and postmerger spectrum over any single anomalous
+          frequency.
+        </p>
+      </div>
+      <div class="r-card">
+        <h3>Dense matter, structure, and stability</h3>
+        <p>
+          The equation of state enters as a set of measurable consequences rather than a label:
+          composition gradients set buoyancy and the g-mode spectrum, elasticity determines
+          whether motion penetrates or fractures the crust, tidal deformability shapes the
+          inspiral, and thermal pressure and differential rotation govern whether a massive
+          remnant survives. I follow these observables through a common stellar model so that
+          degeneracies with spin, temperature, magnetic field, and the underlying theory of
+          gravity can be cross-checked rather than assumed away.
         </p>
       </div>
     </div>
@@ -499,11 +523,25 @@
   <div class="container">
     <h2>Publications</h2>
 
-    <div class="pub-group open" id="pg-2024">
+    <div class="pub-group open" id="pg-2026">
+      <button class="pub-toggle" onclick="togglePub('pg-2026')">
+        <span class="pub-toggle-label">2026 &ndash; 2027</span>
+        <span class="pub-toggle-meta">
+          <span class="pub-count">2 papers</span>
+          <span class="chevron"></span>
+        </span>
+      </button>
+      <div class="pub-list">
+        <div class="pub-item"><span class="pub-num">27</span><span class="title">Difference between quark stars and neutron stars in universal relations and their effect on gravitational waves</span></div>
+        <div class="pub-item"><span class="pub-num">28</span><span class="title">Donutization Inside Neutron Stars: Shell-Localized Scalar Fields</span></div>
+      </div>
+    </div>
+
+    <div class="pub-group" id="pg-2024">
       <button class="pub-toggle" onclick="togglePub('pg-2024')">
         <span class="pub-toggle-label">2024 &ndash; 2025</span>
         <span class="pub-toggle-meta">
-          <span class="pub-count">12 papers</span>
+          <span class="pub-count">11 papers</span>
           <span class="chevron"></span>
         </span>
       </button>
@@ -517,9 +555,8 @@
         <div class="pub-item"><span class="pub-num">22</span><a href="/2024-25/j3zk-z17h.pdf">Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity</a></div>
         <div class="pub-item"><span class="pub-num">23</span><a href="/2024-25/aa54890-25.pdf">Non-linear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars</a></div>
         <div class="pub-item"><span class="pub-num">24</span><a href="/2024-25/nbk7-8kts.pdf">Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries</a></div>
-        <div class="pub-item"><span class="pub-num">25</span><span class="title">Convective stability analysis of massive neutron stars formed in binary mergers</span></div>
-        <div class="pub-item"><span class="pub-num">26</span><span class="title">The error budget of binary neutron star merger simulations for configurations with high spin</span></div>
-        <div class="pub-item"><span class="pub-num">27</span><span class="title">g-mode resonance in dissipative and reactive neutron stars during inspirals</span></div>
+        <div class="pub-item"><span class="pub-num">25</span><a href="/2024-25/w8gq-3d54.pdf">Convective stability analysis of massive neutron stars formed in binary mergers</a></div>
+        <div class="pub-item"><span class="pub-num">26</span><a href="/2024-25/2506.02115v1.pdf">The error budget of binary neutron star merger simulations for configurations with high spin</a></div>
       </div>
     </div>
 

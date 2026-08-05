@@ -29,15 +29,6 @@
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(44,95,138,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -48,32 +39,18 @@
     text-decoration: none;
     letter-spacing: 0.08em;
     margin-bottom: 40px;
-    transition: color 0.2s;
   }
 
   .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '←'; font-size: 1rem; }
 
-  .back-link::before {
-    content: '←';
-    font-size: 1rem;
-  }
-
-  .wrapper {
-    max-width: 760px;
-    margin: 0 auto;
-    animation: fadeUp 0.7s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  .wrapper { max-width: 760px; margin: 0 auto; }
 
   /* Header */
   .header {
     border-left: 3px solid var(--accent);
     padding-left: 20px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   .tag {
@@ -83,23 +60,6 @@
     color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .tag::before {
-    content: '';
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
   }
 
   h1 {
@@ -126,20 +86,9 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 24px 28px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     font-size: 0.97rem;
     line-height: 1.75;
-    color: var(--text);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .intro::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent2), var(--accent));
   }
 
   /* Metrics row */
@@ -147,7 +96,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
 
   .metric {
@@ -156,12 +105,6 @@
     border-radius: 10px;
     padding: 20px 18px;
     text-align: center;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .metric:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
   }
 
   .metric .value {
@@ -195,16 +138,6 @@
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .card-title::before {
-    content: '';
-    display: inline-block;
-    width: 14px; height: 2px;
-    background: var(--accent);
   }
 
   .card p {
@@ -214,6 +147,39 @@
   }
 
   .card p + p { margin-top: 12px; }
+
+  /* Figures */
+  figure { margin: 0; }
+  figure svg { width: 100%; height: auto; display: block; }
+
+  figcaption {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+
+  .svg-axis   { stroke: var(--border); stroke-width: 1; }
+  .svg-grid   { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 3; }
+  .svg-tick   { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--muted); }
+  .svg-val    { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: var(--text); }
+  .svg-sub    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--muted); }
+  .bar-a { fill: var(--accent); }
+  .bar-b { fill: var(--accent2); opacity: 0.55; }
+  .bar-c { fill: var(--gold); opacity: 0.75; }
+  .bar-void { fill: none; stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 3; }
+
+  /* Solver list */
+  .solvers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .solvers div span { color: var(--muted); }
 
   /* Code path */
   code {
@@ -228,18 +194,8 @@
   }
 
   /* Steps */
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 6px;
-  }
-
-  .step {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
+  .steps { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+  .step { display: flex; align-items: flex-start; gap: 14px; }
 
   .step-num {
     font-family: 'JetBrains Mono', monospace;
@@ -254,45 +210,37 @@
     margin-top: 2px;
   }
 
-  .step-text {
-    font-size: 0.93rem;
-    line-height: 1.65;
-    color: var(--text);
+  .step-text { font-size: 0.93rem; line-height: 1.65; }
+
+  /* Provenance */
+  .prov {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    margin-top: 28px;
   }
 
   /* CTA */
   .cta {
-    background: linear-gradient(135deg, rgba(44,95,138,0.07), rgba(74,111,165,0.07));
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 22px 28px;
     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .cta-icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-  }
-
-  .cta-text {
     font-size: 0.93rem;
     line-height: 1.65;
-    color: var(--text);
   }
 
-  .cta-text strong { color: var(--green); }
-
-  /* Highlight inline */
-  .hi { color: var(--text); font-weight: 700; }
+  .hi { font-weight: 700; }
   .hi-gold { color: var(--gold); font-weight: 700; }
   .hi-green { color: var(--green); font-weight: 700; }
 
   @media (max-width: 520px) {
     .metrics { grid-template-columns: 1fr 1fr; }
     .metrics .metric:last-child { grid-column: span 2; }
+    .solvers { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -304,37 +252,210 @@
   <div class="header">
     <div class="tag">Internal Announcement · AEI</div>
     <h1>Introducing <span>Celephais</span></h1>
-    <p class="subtitle">A Kadath-based initial-data code built for longevity.</p>
+    <p class="subtitle">Spectral XCTS initial data for precessing compact binaries — on a laptop.</p>
   </div>
 
   <div class="intro">
-    <span class="hi">Celephais</span> is a numerical-relativity code built upon the <span class="hi">Kadath library</span>. It is a sibling of FUKa—not a branch or fork of FUKa—and is maintained for production initial-data calculations.
+    <span class="hi">Celephais</span> is a numerical-relativity initial-data code built on the
+    <span class="hi">Kadath</span> spectral library — a sibling of FUKa, not a branch or fork of it.
+    It solves the XCTS system for binary neutron stars and black-hole–neutron-star systems
+    <span class="hi">without imposing equatorial symmetry</span>, so spins may take arbitrary
+    orientations. The globally coupled multi-domain Jacobian is assembled in sparse form, factored
+    with <span class="hi">MUMPS</span>, and reused as a refreshed right preconditioner inside a
+    Jacobian-free Newton–Krylov iteration; dense storage never appears.
+    A converged precessing-BNS solve on a survey grid completes in
+    <span class="hi-gold">≈26 s on four cores</span> — about
+    <span class="hi-gold">140 solutions per hour</span> from one laptop, with no cluster allocation.
   </div>
 
-  <!-- Performance metrics -->
+  <!-- Absolute performance -->
   <div class="metrics">
     <div class="metric">
-      <div class="value">10×</div>
-      <div class="label">Speedup via cheaper Jacobian construction</div>
+      <div class="value">26 s</div>
+      <div class="label">Converged precessing-BNS solve, 4 MPI ranks, survey grid <em>N</em>&nbsp;=&nbsp;7</div>
     </div>
     <div class="metric">
-      <div class="value">70%</div>
-      <div class="label">Memory saved with sparse matrix solver</div>
+      <div class="value">&lt;&nbsp;17 GB</div>
+      <div class="label">Complete production-resolution job — fits in laptop memory</div>
     </div>
     <div class="metric">
-      <div class="value">2D</div>
-      <div class="label">New axisymmetric ID solver (isoBH + isoNS)</div>
+      <div class="value">3×</div>
+      <div class="label">Fewer unknowns for the same constraint accuracy with <em>hp</em>-AMR (<em>q</em>&nbsp;=&nbsp;20)</div>
     </div>
+  </div>
+
+  <!-- Strong scaling -->
+  <div class="card">
+    <div class="card-title">Absolute cost — strong scaling</div>
+    <p>
+      Sparse-Jacobian construction plus <code>MUMPS</code> analysis and factorisation for an
+      equal-mass <em>1.35 + 1.35 M</em><sub>☉</sub> precessing BNS (DD2 EOS, coordinate separation
+      35 <em>M</em><sub>☉</sub>, one star at <em>χ</em> = 0.3 tilted 81° to the orbital angular
+      momentum), at resolution <em>N</em> = 9. All timings are on a single MacBook Pro with an
+      Apple M4 Max processor.
+    </p>
+    <figure style="margin-top:18px;">
+      <svg viewBox="0 0 620 300" role="img" aria-label="Bar chart of wall time versus MPI rank count: assembly falls from 29.9 s on 1 rank to 6.16 s on 8 ranks.">
+        <!-- gridlines -->
+        <line class="svg-grid" x1="60" y1="164.4" x2="600" y2="164.4"/>
+        <line class="svg-grid" x1="60" y1="108.9" x2="600" y2="108.9"/>
+        <line class="svg-grid" x1="60" y1="53.3"  x2="600" y2="53.3"/>
+        <text class="svg-tick" x="52" y="224" text-anchor="end">0</text>
+        <text class="svg-tick" x="52" y="168" text-anchor="end">10</text>
+        <text class="svg-tick" x="52" y="113" text-anchor="end">20</text>
+        <text class="svg-tick" x="52" y="57"  text-anchor="end">30</text>
+        <text class="svg-tick" x="16" y="120" text-anchor="middle" transform="rotate(-90 16 120)">seconds</text>
+
+        <!-- 1 rank -->
+        <rect class="bar-a" x="89.5"  y="53.9"  width="34" height="166.1"/>
+        <rect class="bar-b" x="131.5" y="24.1"  width="34" height="195.9"/>
+        <text class="svg-val" x="106.5" y="48"  text-anchor="middle">29.90</text>
+        <text class="svg-val" x="148.5" y="18"  text-anchor="middle">35.26</text>
+        <!-- 2 ranks -->
+        <rect class="bar-a" x="224.5" y="130.9" width="34" height="89.1"/>
+        <rect class="bar-b" x="266.5" y="100.7" width="34" height="119.3"/>
+        <text class="svg-val" x="241.5" y="125" text-anchor="middle">16.04</text>
+        <text class="svg-val" x="283.5" y="95"  text-anchor="middle">21.47</text>
+        <!-- 4 ranks -->
+        <rect class="bar-a" x="359.5" y="169.4" width="34" height="50.6"/>
+        <rect class="bar-b" x="401.5" y="139.6" width="34" height="80.4"/>
+        <text class="svg-val" x="376.5" y="164" text-anchor="middle">9.10</text>
+        <text class="svg-val" x="418.5" y="134" text-anchor="middle">14.47</text>
+        <!-- 8 ranks -->
+        <rect class="bar-a" x="494.5" y="185.8" width="34" height="34.2"/>
+        <rect class="bar-b" x="536.5" y="153.1" width="34" height="66.9"/>
+        <text class="svg-val" x="511.5" y="180" text-anchor="middle">6.16</text>
+        <text class="svg-val" x="553.5" y="147" text-anchor="middle">12.04</text>
+
+        <!-- axis -->
+        <line class="svg-axis" x1="60" y1="220" x2="600" y2="220"/>
+        <text class="svg-tick" x="127.5" y="240" text-anchor="middle">1 rank</text>
+        <text class="svg-tick" x="262.5" y="240" text-anchor="middle">2</text>
+        <text class="svg-tick" x="397.5" y="240" text-anchor="middle">4</text>
+        <text class="svg-tick" x="532.5" y="240" text-anchor="middle">8</text>
+        <text class="svg-sub"  x="127.5" y="256" text-anchor="middle">1.00×</text>
+        <text class="svg-sub"  x="262.5" y="256" text-anchor="middle">1.86×</text>
+        <text class="svg-sub"  x="397.5" y="256" text-anchor="middle">3.29×</text>
+        <text class="svg-sub"  x="532.5" y="256" text-anchor="middle">4.85×</text>
+
+        <!-- legend -->
+        <rect class="bar-a" x="60"  y="278" width="12" height="12"/>
+        <text class="svg-tick" x="78" y="288">Jacobian assembly</text>
+        <rect class="bar-b" x="230" y="278" width="12" height="12"/>
+        <text class="svg-tick" x="248" y="288">assembly + factorisation (wall)</text>
+      </svg>
+      <figcaption>
+        Assembly speedup reaches 4.85× on eight ranks (60.7% parallel efficiency). Extra ranks
+        accelerate assembly but not the sparse factorisation, so the wall time flattens first —
+        adding ranks past this knee buys little.
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- Resolution ladder -->
+  <div class="card">
+    <div class="card-title">Why adaptive refinement</div>
+    <p>
+      Uniform spectral order is the expensive way to buy accuracy: stored nonzeros and
+      factorisation cost grow much faster than the unknown count. The same precessing BNS on two
+      ranks, swept in resolution:
+    </p>
+    <figure style="margin-top:18px;">
+      <svg viewBox="0 0 620 300" role="img" aria-label="Stacked bar chart of assembly and factorisation cost versus spectral resolution, rising from 20 s at N=9 to over 313 s at N=15.">
+        <!-- gridlines -->
+        <line class="svg-grid" x1="60" y1="167.4" x2="600" y2="167.4"/>
+        <line class="svg-grid" x1="60" y1="114.7" x2="600" y2="114.7"/>
+        <line class="svg-grid" x1="60" y1="62.1"  x2="600" y2="62.1"/>
+        <text class="svg-tick" x="52" y="224" text-anchor="end">0</text>
+        <text class="svg-tick" x="52" y="171" text-anchor="end">100</text>
+        <text class="svg-tick" x="52" y="119" text-anchor="end">200</text>
+        <text class="svg-tick" x="52" y="66"  text-anchor="end">300</text>
+        <text class="svg-tick" x="16" y="120" text-anchor="middle" transform="rotate(-90 16 120)">seconds</text>
+
+        <!-- N=9 -->
+        <rect class="bar-a" x="99.5"  y="211.6" width="56" height="8.4"/>
+        <rect class="bar-c" x="99.5"  y="209.5" width="56" height="2.1"/>
+        <text class="svg-val" x="127.5" y="203" text-anchor="middle">20.1</text>
+        <!-- N=11 -->
+        <rect class="bar-a" x="234.5" y="194.6" width="56" height="25.4"/>
+        <rect class="bar-c" x="234.5" y="183.1" width="56" height="11.5"/>
+        <text class="svg-val" x="262.5" y="177" text-anchor="middle">70.1</text>
+        <!-- N=13 -->
+        <rect class="bar-a" x="369.5" y="152.8" width="56" height="67.2"/>
+        <rect class="bar-c" x="369.5" y="107.3" width="56" height="45.5"/>
+        <text class="svg-val" x="397.5" y="101" text-anchor="middle">214.3</text>
+        <!-- N=15 -->
+        <rect class="bar-a" x="504.5" y="55.4"  width="56" height="164.6"/>
+        <rect class="bar-void" x="504.5" y="33.4" width="56" height="22.0"/>
+        <text class="svg-val" x="532.5" y="27"  text-anchor="middle">312.9 +</text>
+
+        <!-- axis -->
+        <line class="svg-axis" x1="60" y1="220" x2="600" y2="220"/>
+        <text class="svg-tick" x="127.5" y="240" text-anchor="middle">N = 9</text>
+        <text class="svg-tick" x="262.5" y="240" text-anchor="middle">N = 11</text>
+        <text class="svg-tick" x="397.5" y="240" text-anchor="middle">N = 13</text>
+        <text class="svg-tick" x="532.5" y="240" text-anchor="middle">N = 15</text>
+        <text class="svg-sub"  x="127.5" y="256" text-anchor="middle">41.6k dof</text>
+        <text class="svg-sub"  x="262.5" y="256" text-anchor="middle">81.0k</text>
+        <text class="svg-sub"  x="397.5" y="256" text-anchor="middle">120.2k</text>
+        <text class="svg-sub"  x="532.5" y="256" text-anchor="middle">191.2k</text>
+        <text class="svg-sub"  x="127.5" y="270" text-anchor="middle">2.8 GB</text>
+        <text class="svg-sub"  x="262.5" y="270" text-anchor="middle">7.4 GB</text>
+        <text class="svg-sub"  x="397.5" y="270" text-anchor="middle">13.9 GB</text>
+        <text class="svg-sub"  x="532.5" y="270" text-anchor="middle">out of memory</text>
+
+        <!-- legend -->
+        <rect class="bar-a" x="60"  y="284" width="12" height="12"/>
+        <text class="svg-tick" x="78" y="294">Jacobian assembly</text>
+        <rect class="bar-c" x="230" y="284" width="12" height="12"/>
+        <text class="svg-tick" x="248" y="294">MUMPS analysis + factorisation</text>
+      </svg>
+      <figcaption>
+        A 4.6× increase in unknowns costs 19.5× in assembly alone and exhausts laptop memory at
+        <em>N</em> = 15, where the factorisation did not complete. Anisotropic
+        <em>hp</em>-refinement answers this: domain-local spectral tails decide where order is
+        added, so resolution is not spent on directions that are already resolved.
+      </figcaption>
+    </figure>
+    <p style="margin-top:16px;">
+      For a mass-ratio-20 BHNS, one <em>h</em> move reduces the Hamiltonian-constraint norm by about
+      a factor of 8 — roughly 2.4× better than the equal-cost <em>p</em> move — and subsequent
+      <em>p</em> moves match the finest uniform-grid accuracy with about
+      <span class="hi-gold">three times fewer unknowns</span>. At mass ratio 10 the saving is 1.6×.
+    </p>
+  </div>
+
+  <!-- Scope -->
+  <div class="card">
+    <div class="card-title">Solver coverage</div>
+    <div class="solvers">
+      <div>Isolated black hole <span>— BH (3D), BH2d</span></div>
+      <div>Isolated neutron star <span>— NS, NS_nosym, NS2d, NS2d_xcts</span></div>
+      <div>Binary neutron star <span>— BNS, BNS_nosym</span></div>
+      <div>Black hole – neutron star <span>— BHNS, BHNS_nosym</span></div>
+      <div>Scalar–tensor (DEF) <span>— NS_def, BNS_def</span></div>
+      <div>Scalar–Gauss–Bonnet <span>— NS_sGB, BNS_sGB</span></div>
+    </div>
+    <p style="margin-top:14px;">
+      <code>_nosym</code> variants drop orbital-plane symmetry for spinning and tilted
+      configurations; binary black holes are built on the BH formalism. MUMPS 5.9.0 and METIS 5.1.0
+      are vendored and built automatically — no separate installation.
+    </p>
   </div>
 
   <!-- Validation -->
   <div class="card">
     <div class="card-title">Validation</div>
     <p>
-      Generated BNS initial data has been tested with the <span class="hi">SACRA code</span> — many thanks to <span class="hi-gold">Yong</span> and <span class="hi-gold">Mingzhe</span> for their support in validating the codebase.
+      Generated BNS initial data has been evolved with the <span class="hi">SACRA</span> code —
+      many thanks to <span class="hi-gold">Yong</span> and <span class="hi-gold">Mingzhe</span> for
+      their support in validating the codebase.
     </p>
     <p>
-      At this stage, Celephais is ready for <span class="hi-green">production initial-data runs</span>.
+      The accompanying code paper adds binding-energy comparisons against post-Newtonian sequences,
+      a precessing-BNS eccentricity-reduction test, and a full evolution whose
+      waveform-reconstructed precession axis follows a post-Newtonian simple-precession model.
+      Celephais is <span class="hi-green">ready for production initial-data runs</span>.
     </p>
   </div>
 
@@ -354,17 +475,24 @@
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Launch locally or submit through <code>sub_Celephais.sh</code>.</div>
+        <div class="step-text">Launch locally or submit through <code>sub_Celephais.sh</code> — the same script runs under <code>mpirun</code> or <code>sbatch</code>.</div>
       </div>
     </div>
   </div>
 
-  <!-- GitHub CTA -->
+  <div class="prov">
+    Benchmark provenance: all figures are medians of three runs on one MacBook Pro with an Apple
+    M4 Max processor. Scaling and resolution data are from Table I of the Celephais code paper
+    (in preparation); the 26 s figure is an end-to-end converged solve of the canonical
+    BNS_nosym configuration at <em>N</em> = 7 on four MPI ranks, measured 4 August 2026, and
+    covers boost and binary stages to a final Newton error of 3 × 10<sup>−9</sup>.
+    Throughput is that solve run back to back on the same four ranks. At <em>N</em> = 15 the
+    factorisation did not complete within available memory.
+  </div>
+
   <div class="cta">
-    <div class="cta-icon">⚡</div>
-    <div class="cta-text">
-      Follow development and releases in the public <a href="https://github.com/Hao-Jui/Celephais"><strong>Celephais GitHub repository</strong></a>.
-    </div>
+    Follow development and releases in the public
+    <a href="https://github.com/Hao-Jui/Celephais"><strong>Celephais GitHub repository</strong></a>.
   </div>
 
 </div>
