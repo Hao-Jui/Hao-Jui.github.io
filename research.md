@@ -1,6 +1,6 @@
 # Reading neutron stars through gravity and light
 
-_Hao-Jui Kuan — research profile based on 25 unique full-text papers (2020–2026), updated 5 August 2026_
+_Hao-Jui Kuan — research profile based on 26 unique full-text papers (2020–2026), updated 5 August 2026_
 
 ---
 
@@ -8,7 +8,7 @@ _Hao-Jui Kuan — research profile based on 25 unique full-text papers (2020–2
 
 I study how neutron stars reveal what they are made of—and whether gravity follows Einstein—through the signals they emit before, during, and after coalescence. My research connects relativistic stellar oscillations, gravitational-wave modelling, numerical relativity, strong-field tests of gravity, and high-energy transients. The common goal is to turn compact-object dynamics into measurements: of the nuclear equation of state, stellar spin and stratification, nonlinear tidal physics, and possible departures from general relativity.
 
-This programme spans analytic theory, perturbative calculations, quasiequilibrium initial data, fully relativistic simulations, waveform construction, detector forecasts, and multimessenger interpretation. Within the 25 unique papers available here, I am first author on 13 and second author on 7. Together, these works form a connected research strategy: identify a physical effect, predict its observable signature, quantify the modelling uncertainty, and determine what a future detection—or a principled nondetection—would teach us.
+This programme spans analytic theory, perturbative calculations, quasiequilibrium initial data, fully relativistic simulations, waveform construction, detector forecasts, and multimessenger interpretation. Within the 26 unique papers available here, I am first author on 13 and second author on 7. Together, these works form a connected research strategy: identify a physical effect, predict its observable signature, quantify the modelling uncertainty, and determine what a future detection—or a principled nondetection—would teach us.
 
 ## 📊 Portfolio balance
 
@@ -17,25 +17,25 @@ The proportions below are a transparent proxy for sustained research effort. Eac
 ```mermaid
 pie
     accTitle: Research Direction Portfolio
-    accDescr: Publication-weighted distribution of 25 unique papers across four future-facing research directions
+    accDescr: Publication-weighted distribution of 26 unique papers across four future-facing research directions
 
     title 📊 Publication-weighted research directions
-    "🔍 Tidal asteroseismology and multimessenger signals" : 37.0
-    "⚙️ Numerical relativity and precision waveforms" : 24.8
-    "🧪 Strong-field gravity and scalarization" : 23.7
-    "📚 Dense matter, structure, and stability" : 14.5
+    "🔍 Tidal asteroseismology and multimessenger signals" : 38.5
+    "⚙️ Numerical relativity and precision waveforms" : 24.6
+    "🧪 Strong-field gravity and scalarization" : 22.8
+    "📚 Dense matter, structure, and stability" : 14.1
 ```
 
 | Research direction | Equivalent papers | Portfolio share |
 | --- | ---: | ---: |
-| **Tidal asteroseismology and multimessenger signals** | 9.26 | 37.0% |
-| **Numerical relativity and precision waveforms** | 6.20 | 24.8% |
-| **Strong-field gravity and scalarization** | 5.92 | 23.7% |
-| **Dense matter, structure, and stability** | 3.62 | 14.5% |
+| **Tidal asteroseismology and multimessenger signals** | 10.01 | 38.5% |
+| **Numerical relativity and precision waveforms** | 6.40 | 24.6% |
+| **Strong-field gravity and scalarization** | 5.92 | 22.8% |
+| **Dense matter, structure, and stability** | 3.67 | 14.1% |
 
 The relative length of the four sections below follows the same balance. Because many papers bridge two or more themes, the fractions describe a connected portfolio rather than isolated silos.
 
-## 🔍 Tidal asteroseismology and multimessenger signals — 37.0%
+## 🔍 Tidal asteroseismology and multimessenger signals — 38.5%
 
 ### Reading the final seconds before merger
 
@@ -49,7 +49,7 @@ The waveform itself carries complementary mode information. My first-author stud
 
 My multimessenger work follows the energy beyond the stellar mode. A study of [quasi-periodic oscillations as seismic aftershocks](2022-23/aa44082-22.pdf) interpreted the statistically secure 22 Hz feature (+3/−2 Hz) in the precursor of GRB 211211A as consistent with a crustal torsional mode, with a tentative 51 Hz feature consistent with a higher multipole. A later calculation of [oscillations in stratified stars with solid crusts](2024-25/nbk7-8kts.pdf) treated elasticity and composition together, finding that nonresonant f- and shear-mode forcing can fracture the crust near a gravitational-wave frequency of 200 Hz and make roughly 10⁴⁶ erg available in crust-confined motion by 300 Hz. The quantitative conversion of that mechanical energy into gamma rays remains uncertain, but the calculation narrows the physical interface between mode theory and transient observations.
 
-Tidal motion may also reorganise the magnetic field before merger. Our model of [resonance-induced magnetorotational instability](2024-25/PhysRevD.109.103023.pdf) predicts that low-order g-modes can create differential rotation in the crust and amplify fields above 10¹³ G on millisecond timescales for sufficiently rapid spins. The broader [review of premerger phenomena](2024-25/universe-10-00441.pdf) places this mechanism alongside crust failure, magnetospheric interaction, shocks, dynamos, and other proposed engines; its central lesson is that the observed precursor population is unlikely to have a single origin. Beyond mergers, my collaboration on [magnetar-powered neutrinos](2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf) showed how source magnetic fields could make neutrino magnetic moments as small as 10⁻¹² μB—and, under favourable geometry, smaller—visible through flavour and Glashow-resonance signatures at IceCube.
+Tidal motion may also reorganise the magnetic field before merger. Our model of [resonance-induced magnetorotational instability](2024-25/PhysRevD.109.103023.pdf) predicts that low-order g-modes can create differential rotation in the crust and amplify fields above 10¹³ G on millisecond timescales for sufficiently rapid spins. A complementary [nonlinear study of resonant gravito-inertial modes](2024-25/aa54890-25.pdf) developed a split equilibrium/dynamical-tide formulation and used three-dimensional pseudo-spectral simulations to find differential rotation, parametric instabilities, and spin-up. In its idealised Boussinesq models, flow energies could support 10¹⁴–10¹⁵ G fields under equipartition; magnetic conversion, realistic diffusivities, realistic density profiles, and crust response remain to be simulated. The broader [review of premerger phenomena](2024-25/universe-10-00441.pdf) places these mechanisms alongside crust failure, magnetospheric interaction, shocks, dynamos, and other proposed engines; its central lesson is that the observed precursor population is unlikely to have a single origin. Beyond mergers, my collaboration on [magnetar-powered neutrinos](2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf) showed how source magnetic fields could make neutrino magnetic moments as small as 10⁻¹² μB—and, under favourable geometry, smaller—visible through flavour and Glashow-resonance signatures at IceCube.
 
 ### Future direction
 
@@ -57,7 +57,7 @@ The next step is a self-consistent model of the final seconds that connects orbi
 
 On the observational side, homogeneous precursor catalogues and coordinated gravitational-wave, gamma-ray, radio, X-ray, neutrino, kilonova, and afterglow analyses can help break degeneracies among spin, equation of state, magnetic field, mode identity, and jet delay. Next-generation interferometers could make many currently small mode effects measurable in the phase, while IceCube-Gen2 and wide-field transient facilities can test whether the same systems produce high-energy counterparts. This creates a path from individual candidate events to population-level neutron-star asteroseismology.
 
-## ⚙️ Numerical relativity and precision waveforms — 24.8%
+## ⚙️ Numerical relativity and precision waveforms — 24.6%
 
 Numerical accuracy is part of the physics: a waveform cannot reveal a subtle tide or modification of gravity if its uncertainty is larger than the signal. My [error-budget study of highly spinning binary neutron stars](2024-25/2506.02115v1.pdf) isolated uncertainties from extraction radius, grid resolution, evolution code, and initial-data solver. FUKA and SGRID initial data evolved with the same code remained within about 0.02 radians during inspiral, while the SACRA-MPI–BAM difference reached roughly 1.6–2.2 radians near merger. Current analytic models differed from the simulations by as much as about 4 radians, outside the estimated numerical budget. The study found that initial-data choice alone cannot explain the discrepancy and identified several candidate causes: missing higher-multipole finite-size terms, inadequate post-contact modelling, and assumptions inherited from binary-black-hole baselines.
 
@@ -65,11 +65,11 @@ This precision programme also tests the physical assumptions inside waveform mod
 
 Long-lived remnants pose a different accuracy challenge. Our [convective-stability analysis of massive merger remnants](2024-25/w8gq-3d54.pdf) followed three systems for about 120 ms, found neither large-scale convection nor an observable inertial-mode signal, and showed that a growing one-arm feature was strongly correlated with linear-momentum violation. This result raised a numerical-origin concern rather than settling the mode's identity, and it identifies a conservation problem that future mesh-refinement methods must solve before the feature receives an astrophysical interpretation.
 
-Across these projects, the modelling chain extends from theory-consistent initial data and eccentricity reduction to adaptive-mesh evolution, radiation extraction, convergence tests, and comparisons with fast waveform approximants. That end-to-end perspective makes discrepancies diagnostically useful. Agreement between independent initial-data solvers can rule out one source of error; resolution and extraction studies bound others; cross-code comparisons expose implementation-sensitive dynamics; and the remaining residual against an analytic model identifies physics that the model may lack. The same discipline applies when a surprising postmerger mode appears: conservation checks and symmetry-preserving tests must precede astrophysical interpretation.
+Across these projects, the modelling chain extends from theory-consistent initial data and eccentricity reduction to adaptive-mesh evolution, radiation extraction, convergence tests, and comparisons with fast waveform approximants. The split-tide formulation used for nonlinear gravito-inertial modes provides a complementary bridge between linear calculations and relativistic merger runs, although its Newtonian Boussinesq approximation is a calibration model rather than a waveform-ready description. That end-to-end perspective makes discrepancies diagnostically useful. Agreement between independent initial-data solvers can rule out one source of error; resolution and extraction studies bound others; cross-code comparisons expose implementation-sensitive dynamics; and the remaining residual against an analytic model identifies physics that the model may lack. The same discipline applies when a surprising postmerger mode appears: conservation checks and symmetry-preserving tests must precede astrophysical interpretation.
 
 My future work in this direction will expand cross-code benchmarks across mass ratio, equation of state, aligned and retrograde spin, and postmerger lifetime. Waveform models need high-spin current multipoles, higher-order finite-size effects, nonlinear dynamical tides, cleaner treatment after contact, and explicit tests of whether black-hole horizon-absorption terms inherited from baseline models are appropriate for neutron stars. In parallel, long postmerger simulations need finite-temperature equations of state, neutrino transport, magnetic fields, and explicitly momentum-conserving refinement. The payoff is a waveform error budget that remains trustworthy as detector sensitivity improves—and that lets us distinguish missing astrophysical physics from gravity beyond general relativity.
 
-## 🧪 Strong-field gravity and scalarization — 23.7%
+## 🧪 Strong-field gravity and scalarization — 22.8%
 
 My second major scientific pillar uses dynamical compact stars to test gravity in regimes inaccessible to weak-field experiments. Early work established a [viability condition for scalar–tensor frame transformations](2020-21/Geng_2020_Class._Quantum_Grav._37_115001.pdf) and applied it to the [inverse-chirp scalar signal from core collapse](2020-21/s10052-020-8359-y.pdf). Subsequent simulations studied [triple-scalar interactions in massive scalar–tensor collapse](2020-21/Huang_2021_Class._Quantum_Grav._38_245006.pdf), the [dynamical formation of scalarized neutron stars and black holes](2020-21/PhysRevLett.127.161103.pdf), and the [nonlinear stability and nonuniqueness of scalarized stars](2020-21/PhysRevD.104.124013.pdf). Together, these works move from mathematical consistency to formation channels, waveform morphology, and nonlinear outcomes.
 
@@ -81,7 +81,7 @@ The observational strategy is deliberately redundant. A massive scalar can alter
 
 The future challenge is therefore joint inference rather than signature hunting in isolation. I aim to produce fully backreacting, three-dimensional merger and collapse waveforms across broader scalar couplings, masses, spins, equations of state, and finite-temperature microphysics. Gravity-aware universal relations and theory-parameterised waveform models can then be confronted with next-generation observations. Combining inspiral, prompt-collapse threshold, postmerger spectrum, scalar radiation, and electromagnetic counterparts is designed to test whether scalarization, nuclear phase transitions, and conventional modelling error can be separated instead of allowing one to masquerade as another.
 
-## 📚 Dense matter, structure, and stability — 14.5%
+## 📚 Dense matter, structure, and stability — 14.1%
 
 Dense-matter physics is a cross-cutting target rather than an isolated application. The [g-mode equation-of-state study](2022-23/stac1101.pdf) grouped 20 equations of state through their stratified spectra and linked those modes to radius, tidal deformability, and central sound speed. The [solid-crust oscillation calculation](2024-25/nbk7-8kts.pdf) showed how elasticity changes mode identity and crust penetration. The [scalar-tensor universal-relation catalogue](2024-25/PhysRevLett.134.151402.pdf) demonstrated that gravity and phase-transition effects can shift the same observables, while the [axisymmetric stability study](2024-25/PhysRevD.111.104030.pdf) and [long-lived remnant analysis](2024-25/w8gq-3d54.pdf) tested how rotation, scalar support, thermal gradients, and numerical conservation govern the survival of massive stars.
 
@@ -95,7 +95,7 @@ The long-term opportunity is to make the neutron-star merger a controlled experi
 
 ## 🔗 Evidence base and update policy
 
-This living profile is based on every distinct research PDF currently available in the repository: 25 unique papers spanning 423 PDF pages. Ten files under `2026-27/` are byte-identical copies of files under `2024-25/` and are counted once. A listed nonlinear-saturation paper currently reuses the PDF of the 2025 tidal-resonance paper, while two newer titles have no local PDFs; none of those title-only records is used for claim-level synthesis. When a distinct full text is added, the paper should receive one unit of fractional topic weight, the totals should be recomputed, and the prose balance should be updated.
+This living profile is based on every distinct research PDF currently available in the repository: 26 unique papers spanning 443 PDF pages. Ten files under `2026-27/` are byte-identical copies of files under `2024-25/` and are counted once. Two newer titles have no local PDFs and are not used for claim-level synthesis. When a distinct full text is added, the paper should receive one unit of fractional topic weight, the totals should be recomputed, and the prose balance should be updated.
 
 <details>
 <summary><strong>📚 Full reviewed corpus</strong></summary>
@@ -107,6 +107,7 @@ The final column is the reproducible allocation ledger. Each row sums to 1.00: *
 | 2026 | [Convective stability analysis of massive neutron stars formed in binary mergers](2024-25/w8gq-3d54.pdf) | Fifth | 0.05 / 0.65 / 0.00 / 0.30 |
 | 2025 | [The error budget of binary neutron star merger simulations for configurations with high spin](2024-25/2506.02115v1.pdf) | First | 0.10 / 0.85 / 0.00 / 0.05 |
 | 2025 | [Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity](2024-25/j3zk-z17h.pdf) | First | 0.65 / 0.30 / 0.00 / 0.05 |
+| 2025 | [Nonlinear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars](2024-25/aa54890-25.pdf) | Third | 0.75 / 0.20 / 0.00 / 0.05 |
 | 2025 | [Nonradial oscillations of stratified neutron stars with solid crusts](2024-25/nbk7-8kts.pdf) | Second | 0.65 / 0.05 / 0.00 / 0.30 |
 | 2025 | [Axisymmetric stability of neutron stars as extreme rotators in massive scalar-tensor theory](2024-25/PhysRevD.111.104030.pdf) | Third | 0.00 / 0.25 / 0.45 / 0.30 |
 | 2025 | [Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory](2024-25/PhysRevLett.134.151402.pdf) | Third | 0.00 / 0.40 / 0.45 / 0.15 |
