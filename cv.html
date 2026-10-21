@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>CV &ndash; Hao-Jui Kuan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -13,6 +14,24 @@
       --accent:  #2c5f8a;
       --text:    #1e2329;
       --muted:   #6b7280;
+      --on-accent:     #ffffff;
+      --hover-tint:    #f0f5fa;
+      --surface-hover: #edf0f4;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:      #14171c;
+        --surface: #1b1f26;
+        --border:  #2c323b;
+        --accent:  #7fb0de;
+        --text:    #e4e7eb;
+        --muted:   #9aa3ae;
+        --on-accent:     #14171c;
+        --hover-tint:    #1f2a36;
+        --surface-hover: #232831;
+      }
+      .about-photo, .intro-photo { filter: brightness(0.92); }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,7 +98,7 @@
       transition: background 0.15s, color 0.15s;
     }
 
-    .btn:hover { background: var(--accent); color: #fff; text-decoration: none; }
+    .btn:hover { background: var(--accent); color: var(--on-accent); text-decoration: none; }
 
     section { padding: 40px 0; border-top: 1px solid var(--border); }
 

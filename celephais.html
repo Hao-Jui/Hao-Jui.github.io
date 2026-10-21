@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
 <title>Celephais — Announcement</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
@@ -16,6 +17,20 @@
     --text:    #1e2329;
     --muted:   #6b7280;
     --green:   #047857;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:      #14171c;
+      --surface: #1b1f26;
+      --border:  #2c323b;
+      --accent:  #7fb0de;
+      --accent2: #8aa6d6;
+      --gold:    #e0a458;
+      --text:    #e4e7eb;
+      --muted:   #9aa3ae;
+      --green:   #4fbf8f;
+    }
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -241,6 +256,14 @@
     .metrics { grid-template-columns: 1fr 1fr; }
     .metrics .metric:last-child { grid-column: span 2; }
     .solvers { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    code {
+      background: rgba(127,176,222,0.12);
+      border-color: rgba(127,176,222,0.25);
+    }
+    a { color: var(--accent); }
   }
 </style>
 </head>
