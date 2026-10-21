@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV &ndash; Hao-Jui Kuan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #ffffff;
+      --surface: #f5f6f8;
+      --border:  #dde1e7;
+      --accent:  #2c5f8a;
+      --text:    #1e2329;
+      --muted:   #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 40px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+    .nav-links a.current { color: var(--accent); font-weight: 500; }
+
+    /* ── Layout ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+    .cv-head { padding: 56px 0 36px; }
+
+    .cv-head h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .cv-head p { color: var(--muted); font-size: 0.95rem; margin: 8px 0 20px; }
+
+    .btn {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 8px 20px;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn:hover { background: var(--accent); color: #fff; text-decoration: none; }
+
+    section { padding: 40px 0; border-top: 1px solid var(--border); }
+
+    section h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h3.cv-sub {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 28px 0 6px;
+    }
+
+    h3.cv-sub:first-of-type { margin-top: 0; }
+
+    h4.cv-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 14px 0 2px;
+    }
+
+    /* ── Rows ── */
+    .cv-row {
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 20px;
+      padding: 7px 0;
+    }
+
+    .cv-date { font-size: 0.85rem; color: var(--muted); }
+    .cv-body { font-size: 0.92rem; }
+    .cv-body em { color: var(--muted); font-style: italic; }
+    .cv-body .talk { font-weight: 600; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 28px 0; }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner a { color: var(--muted); }
+    .footer-inner a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .navbar { padding: 0 20px; }
+      .container { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .cv-row { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
+      .footer-inner { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#research">Research</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#software">Software</a></li>
+    <li><a href="cv.html" class="current">CV</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <header class="cv-head">
+    <h1>Curriculum Vitae</h1>
+    <p>Hao-Jui Kuan &nbsp;&middot;&nbsp; <a href="mailto:hjkuan@illinois.edu">hjkuan@illinois.edu</a></p>
+    <a href="cv.pdf" class="btn">Download PDF</a>
+  </header>
+
+  <section>
+    <h2>Professional experience</h2>
+    <div class="cv-row">
+      <div class="cv-date">2025 &ndash; Present</div>
+      <div class="cv-body">Research scholar at Illinois Center for Advanced Studies of the Universe &amp; University of Illinois Urbana-Champaign, United States. <em>PI: Nicolas Yunes, Jacquelyn Noronha-Hostler.</em></div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2023 &ndash; 2025</div>
+      <div class="cv-body">Postdoc in the Computational Relativistic Astrophysics division at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Germany. <em>PI: Masaru Shibata.</em></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="cv-row">
+      <div class="cv-date">2019 &ndash; 2022</div>
+      <div class="cv-body">University of T&uuml;bingen, T&uuml;bingen, Germany. <em>Advisor: Kostas D. Kokkotas.</em><br>PhD in Theoretical Astrophysics. Summa Cum Laude (excellent; &lesssim;&nbsp;1 in 50 graduates).</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2017 &ndash; 2022</div>
+      <div class="cv-body">National Tsing Hua University, Taiwan. <em>Advisor: Chao-Qiang Geng.</em><br>PhD in Physics (joint degree).</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2013 &ndash; 2017</div>
+      <div class="cv-body">National Tsing Hua University, Taiwan.<br>BSc, double major in Physics and Mathematics.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Honors and awards</h2>
+    <div class="cv-row">
+      <div class="cv-date">2023</div>
+      <div class="cv-body">Honorable Mention in the GWIC-<a href="https://gwic.ligo.org/thesis-prize.html">Braccini Thesis Prize</a>.</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2023</div>
+      <div class="cv-body">Dr. Friedrich F&ouml;rster Prize, one awardee in Faculty of Science in University of T&uuml;bingen, &euro;1,000.</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2023</div>
+      <div class="cv-body">Student Outstanding Paper Award from NCTS (Taiwan), converted as ~620&nbsp;USD.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fellowships and grants</h2>
+    <div class="cv-row">
+      <div class="cv-date">2020 &ndash; 2021</div>
+      <div class="cv-body"><strong>[PI]</strong> &ldquo;Neutron stars as gravitational wave sources&rdquo;, Sandwich-Scholarship Programme, DAAD and MOST (Taiwan), &euro;13,500.</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2017 &ndash; 2020</div>
+      <div class="cv-body">Presidential Scholarship of National Tsing Hua University (Taiwan), converted as ~18,700&nbsp;USD.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reviewing activities</h2>
+    <div class="cv-row">
+      <div class="cv-date">Journals</div>
+      <div class="cv-body">Physical Review Letters, Physical Review D, International Journal of Modern Physics D, European Physical Journal C, Monthly Notices of the Royal Astronomical Society.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Presentations</h2>
+
+    <h3 class="cv-sub">Plenary talks and colloquia</h3>
+    <h4 class="cv-year">2025</h4>
+    <div class="cv-row"><div class="cv-date">Feb 11</div><div class="cv-body"><span class="talk">&ldquo;Uncovering Extreme Matter and Gravity through Gravitational Waves from Neutron Star Mergers&rdquo;</span>, Academia Sinica, Taipei, Taiwan.</div></div>
+    <h4 class="cv-year">2022</h4>
+    <div class="cv-row"><div class="cv-date">Sep 10</div><div class="cv-body"><span class="talk">&ldquo;Premerger Neutron Star Physics&rdquo;</span>, Eleventh Aegean summer school, Syros, Greece.</div></div>
+
+    <h3 class="cv-sub">Invited talks</h3>
+    <h4 class="cv-year">2026</h4>
+    <div class="cv-row"><div class="cv-date">Nov 5</div><div class="cv-body"><span class="talk">&ldquo;Donutization: When Massive Scalar Fields Hide Inside Neutron Stars&rdquo;</span>, Gravity seminar at Perimeter Institute, Toronto, Canada.</div></div>
+    <div class="cv-row"><div class="cv-date">Sep 18</div><div class="cv-body"><span class="talk">&ldquo;Neutron-star oscillations as a spectroscopic probe of dense nuclear physics with gravitational waves&rdquo;</span>, Taiwan-Korea Nuclear Physics, Academia Sinica, Taipei, Taiwan.</div></div>
+    <h4 class="cv-year">2025</h4>
+    <div class="cv-row"><div class="cv-date">Oct 8</div><div class="cv-body"><span class="talk">&ldquo;Tidal Resonance: Nonlinearities revealed by numerical relativity&rdquo;</span>, Astrophysics, Relativity, and Cosmology Seminar at UIUC.</div></div>
+    <div class="cv-row"><div class="cv-date">Jun 17</div><div class="cv-body"><span class="talk">&ldquo;Tidal Resonance in Binary Neutron Star Mergers &ndash; Numerical Relativity Insights&rdquo;</span>, <a href="https://indico.global/event/13880/">conference website</a>, Varna, Bulgaria.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 27</div><div class="cv-body"><span class="talk">&ldquo;Numerical Relativity Insights into Tidal Resonance Phenomena&rdquo;</span>, University of T&uuml;bingen, Germany.</div></div>
+    <h4 class="cv-year">2024</h4>
+    <div class="cv-row"><div class="cv-date">Nov 25</div><div class="cv-body"><span class="talk">&ldquo;Probing Subatomic Physics and Gravity through Gravitational Waves from Neutron Star Mergers&rdquo;</span>, Academia Sinica, Taipei, Taiwan.</div></div>
+    <div class="cv-row"><div class="cv-date">Aug 1</div><div class="cv-body"><span class="talk">&ldquo;On the finite-size imprints on waveforms of binary neutron star mergers&rdquo;</span>, UIUC.</div></div>
+    <div class="cv-row"><div class="cv-date">Jul 11</div><div class="cv-body"><span class="talk">&ldquo;Imprints of matter and scalar effects on waveforms from binary neutron star mergers&rdquo;</span>, online-seminar-in-mathematical-numerical-relativity (<a href="https://github.com/Mathematical-Numerical-Relativity/Online-Seminar/wiki">website</a>).</div></div>
+    <div class="cv-row"><div class="cv-date">Apr 24</div><div class="cv-body"><span class="talk">&ldquo;Imprints of matter and scalar effects on waveforms from binary neutron star mergers&rdquo;</span>, Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University.</div></div>
+    <div class="cv-row"><div class="cv-date">Apr 8</div><div class="cv-body"><span class="talk">&ldquo;(Dynamical) Tidal Effects in the Binary Neutron Star mergers&rdquo;</span>, AstroParticle and Cosmology laboratory (APC), Paris, France.</div></div>
+    <h4 class="cv-year">2023</h4>
+    <div class="cv-row"><div class="cv-date">Mar 16</div><div class="cv-body"><span class="talk">&ldquo;Dynamical Scalarization during Neutron Star Mergers in scalar-Gauss-Bonnet Theory&rdquo;</span>, University of T&uuml;bingen, Germany.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 3</div><div class="cv-body"><span class="talk">&ldquo;Developing waveform involving dynamical tides&rdquo;</span>, Academia Sinica, Taipei, Taiwan.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 2</div><div class="cv-body"><span class="talk">&ldquo;Gravitational Phase Transition in Massive Scalar-tensor Theory&rdquo;</span>, National Center for Theoretical Sciences, Hsinchu, Taiwan.</div></div>
+    <h4 class="cv-year">2021</h4>
+    <div class="cv-row"><div class="cv-date">Jul 27</div><div class="cv-body"><span class="talk">&ldquo;<i>g</i>-mode resonances as triggers for precursors of SGRBs&rdquo;</span>, Grav@zon group, Federal University of Par&aacute;, Par&aacute;, Brazil.</div></div>
+    <div class="cv-row"><div class="cv-date">Jun 22</div><div class="cv-body"><span class="talk">&ldquo;Dynamical formation of scalarized black holes and neutron stars through stellar core collapse&rdquo;</span>, cosmo/GW journal club, Johns Hopkins University, Maryland, USA.</div></div>
+
+    <h3 class="cv-sub">Contributed talks</h3>
+    <h4 class="cv-year">2026</h4>
+    <div class="cv-row"><div class="cv-date">Oct 9</div><div class="cv-body"><span class="talk">&ldquo;Shell-Localized Scalar Fields in Neutron Stars: How They Affect the Interior&rdquo;</span>, Midwest Relativity Meeting, Oakland University, Michigan, USA.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 5</div><div class="cv-body"><span class="talk">&ldquo;Tidal Resonance: Nonlinearities revealed by numerical relativity&rdquo;</span>, Multi-Messenger Astrophysics in the Dynamic Universe, YITP, Kyoto, Japan.</div></div>
+    <h4 class="cv-year">2025</h4>
+    <div class="cv-row"><div class="cv-date">Jul 24</div><div class="cv-body"><span class="talk">&ldquo;Tidal Resonance in Binary Neutron Star Mergers&rdquo;</span>, New Frontiers 2025 in Numerical Relativity, Mallorca, Spain.</div></div>
+    <h4 class="cv-year">2024</h4>
+    <div class="cv-row"><div class="cv-date">Oct 9</div><div class="cv-body"><span class="talk">&ldquo;On the finite-size imprints on waveforms of binary neutron star mergers&rdquo;</span>, Observatoire de Paris &ndash; site de Meudon, France.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 28</div><div class="cv-body"><span class="talk">&ldquo;Binary neutron star mergers in massive scalar-tensor theory&rdquo;</span>, Gravity and Cosmology 2024, Yukawa Institute for Theoretical Physics, Kyoto, Japan.</div></div>
+    <h4 class="cv-year">2023</h4>
+    <div class="cv-row"><div class="cv-date">Oct 26</div><div class="cv-body"><span class="talk">&ldquo;Binary neutron star mergers in massive scalar-tensor theory: an adiabatic look&rdquo;</span>, poster, GravityShapePisa 2023, Pisa, Italy.</div></div>
+    <div class="cv-row"><div class="cv-date">Apr 5</div><div class="cv-body"><span class="talk">&ldquo;Dynamical Scalarization during BNS mergers in scalar-Gauss-Bonnet&rdquo;</span>, CoCoNut meeting, Potsdam, Germany.</div></div>
+    <div class="cv-row"><div class="cv-date">Mar 22</div><div class="cv-body"><span class="talk">&ldquo;Packed Message delivered by Tides in Binary Neutron Star Mergers&rdquo;</span>, SMuK2023, Technical University Dresden, Germany.</div></div>
+    <h4 class="cv-year">2022</h4>
+    <div class="cv-row"><div class="cv-date">Sep 8</div><div class="cv-body"><span class="talk">&ldquo;Gravitational Phase Transition&rdquo;</span>, Eleventh Aegean summer school, Syros, Greece.</div></div>
+    <div class="cv-row"><div class="cv-date">May 16&ndash;19</div><div class="cv-body"><span class="talk">&ldquo;Tidal effects in the pre-merger stage of coalescing binary neutron stars&rdquo;</span>, e-poster, PHAROS: The multi-messenger physics and astrophysics of neutron stars, Roma, Italy.</div></div>
+    <div class="cv-row"><div class="cv-date">Mar 3</div><div class="cv-body"><span class="talk">&ldquo;Resonance shattering as triggers for precursors of SGRBs&rdquo;</span>, DPG Meeting of the Matter and Cosmos section (SMuK), Heidelberg, Germany.</div></div>
+    <h4 class="cv-year">2021</h4>
+    <div class="cv-row"><div class="cv-date">Aug 30 &ndash; Sep 3</div><div class="cv-body"><span class="talk">&ldquo;Tidal <i>g</i>-mode resonances in coalescing binaries of neutron stars as triggers for precursor flares of short gamma-ray bursts&rdquo;</span>, DPG Meeting of the Matter and Cosmos section (SMuK), Bad Honnef, Germany.</div></div>
+    <div class="cv-row"><div class="cv-date">Feb 24&ndash;28</div><div class="cv-body"><span class="talk">&ldquo;Inverse-Chirp Imprint of GW in Scalar Tensor Theory&rdquo;</span>, 56th Karpacz Winter School in Theoretical Physics, Karpacz, Poland.</div></div>
+  </section>
+
+  <section>
+    <h2>Advising and mentoring</h2>
+    <h3 class="cv-sub">Current graduate students</h3>
+    <div class="cv-row"><div class="cv-date">2025 &ndash; Present</div><div class="cv-body">Carlos Conde, UIUC, co-advised with Prof. Yunes.</div></div>
+    <div class="cv-row"><div class="cv-date">2025 &ndash; Present</div><div class="cv-body">Daniel Caballero, UIUC, co-advised with Prof. Yunes.</div></div>
+    <div class="cv-row"><div class="cv-date">2025 &ndash; Present</div><div class="cv-body">Zoey Dong, UIUC, co-advised with Prof. Yunes.</div></div>
+  </section>
+
+  <section>
+    <h2>Teaching activities</h2>
+    <h3 class="cv-sub">Teaching assistant</h3>
+    <div class="cv-row">
+      <div class="cv-date">2016 &ndash; 2019</div>
+      <div class="cv-body"><em>Tsing Hua:</em> General Relativity (2016, 2018 Fall), Mathematical Physics (2017&ndash;18), Thermal Physics (2016&ndash;17), Calculus (2018&ndash;19).</div>
+    </div>
+    <div class="cv-row">
+      <div class="cv-date">2021 &ndash; 2022</div>
+      <div class="cv-body"><em>T&uuml;bingen:</em> Physical Practical (2021 Summer &amp; Winter), Grundkurs Electromagnetism (2022 Summer).</div>
+    </div>
+    <h3 class="cv-sub">Outreach</h3>
+    <div class="cv-row">
+      <div class="cv-date">Mar 2025</div>
+      <div class="cv-body">Black hole lectures, <em>J&uuml;rgen Ehlers Spring School</em>, Potsdam.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Computer skills</h2>
+    <div class="cv-row"><div class="cv-date">Programming</div><div class="cv-body">Python, Fortran, C++</div></div>
+    <div class="cv-row"><div class="cv-date">Scientific software</div><div class="cv-body">Matlab, Mathematica, Gnuplot</div></div>
+    <div class="cv-row">
+      <div class="cv-date">Codes</div>
+      <div class="cv-body">
+        <a href="grass.html"><strong>GRASS</strong></a> (General Relativistic Axisymmetric Spacetime Solver)<br>
+        <a href="celephais.html"><strong>Celephais</strong></a> (Kadath-based numerical-relativity code)
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span>&copy; <span id="year">2026</span> Hao-Jui Kuan</span>
+      <a href="mailto:hjkuan@illinois.edu">hjkuan@illinois.edu</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

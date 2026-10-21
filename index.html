@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hao-Jui Kuan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <style>
     :root {
       --bg:      #ffffff;
@@ -78,8 +77,24 @@
       margin-bottom: 28px;
     }
 
-    /* ── Hero ── */
-    #hero { padding: 64px 0 56px; }
+    /* ── Intro (hero + about) ── */
+    #about { padding: 64px 0 56px; }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .intro-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
 
     .hero-name {
       font-size: clamp(2rem, 4vw, 2.8rem);
@@ -100,7 +115,7 @@
     .hero-title {
       font-size: 0.95rem;
       color: var(--muted);
-      margin: 10px 0 20px;
+      margin: 10px 0 8px;
     }
 
     .hero-title strong {
@@ -111,12 +126,17 @@
     .hero-keywords {
       font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
 
     .hero-keywords span {
       color: var(--accent);
       font-weight: 500;
+    }
+
+    .intro-text p.bio {
+      margin-bottom: 20px;
+      color: var(--text);
     }
 
     .btn {
@@ -134,28 +154,6 @@
     .btn:hover {
       background: var(--accent);
       color: #fff;
-    }
-
-    /* ── About ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 175px 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .about-photo {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-    }
-
-    .about-text p {
-      margin-bottom: 18px;
-      color: var(--text);
     }
 
     .link-row {
@@ -179,6 +177,28 @@
       border-color: var(--accent);
       background: #f0f5fa;
     }
+
+    .recent {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .recent-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-block;
+      min-width: 5.5rem;
+    }
+
+    .recent a { color: var(--accent); text-decoration: none; }
+    .recent a:hover { text-decoration: underline; }
 
     /* ── Research ── */
     #research { background: var(--surface); }
@@ -279,77 +299,104 @@
       display: flex;
       align-items: baseline;
       gap: 14px;
-      padding: 10px 20px;
+      padding: 12px 20px;
       border-bottom: 1px solid var(--border);
     }
 
     .pub-item:last-child { border-bottom: none; }
 
     .pub-num {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--muted);
-      min-width: 20px;
+      min-width: 26px;
       flex-shrink: 0;
+      text-align: right;
     }
 
-    .pub-item a {
-      font-size: 0.88rem;
-      color: var(--accent);
-      text-decoration: none;
+    .pub-entry { min-width: 0; }
+
+    .pub-ref {
+      font-size: 0.82rem;
+      color: var(--muted);
       line-height: 1.55;
     }
 
-    .pub-item a:hover { text-decoration: underline; }
+    .pub-ref b { color: var(--text); font-weight: 600; }
 
-    .pub-item span.title {
-      font-size: 0.88rem;
+    .pub-title {
+      font-size: 0.9rem;
       color: var(--text);
       line-height: 1.55;
+      margin-top: 1px;
     }
+
+    .pub-pdf {
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .pub-pdf a { color: var(--accent); text-decoration: none; }
+    .pub-pdf a:hover { text-decoration: underline; }
+
+    .pub-group-collab { margin-top: 24px; }
 
     .pub-footer-links { margin-top: 18px; }
 
     /* ── Software ── */
     #software { background: var(--surface); }
 
-    .sw-grid {
+    .sw-list { border-top: 1px solid var(--border); }
+
+    .sw-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: 240px 1fr auto;
+      gap: 36px;
+      align-items: baseline;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .sw-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 4px;
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sw-card .btn { margin-top: auto; align-self: flex-start; }
-
-    .sw-card h3 {
-      font-size: 0.95rem;
+    .sw-name {
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 1.15rem;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 8px;
+      letter-spacing: -0.01em;
     }
 
-    .sw-card p {
-      font-size: 0.87rem;
+    .sw-sub {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .sw-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
       line-height: 1.7;
     }
 
-    /* ── Info ── */
-    .info-row {
+    .sw-links {
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 4px;
+      white-space: nowrap;
     }
+
+    .sw-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sw-links a:hover { text-decoration: underline; }
 
     /* ── Footer ── */
     footer {
@@ -376,10 +423,11 @@
     @media (max-width: 640px) {
       .navbar { padding: 0 20px; }
       .container { padding: 0 20px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-photo { max-width: 160px; height: 200px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 28px; }
+      .intro-photo { max-width: 160px; height: 200px; }
       .research-grid { grid-template-columns: 1fr; }
-      .sw-grid { grid-template-columns: 1fr; }
+      .sw-row { grid-template-columns: 1fr; gap: 10px; }
+      .sw-links { flex-direction: row; gap: 18px; }
       .footer-inner { flex-direction: column; gap: 6px; }
     }
 
@@ -397,48 +445,48 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#software">Software</a></li>
-    <li><a href="#info">Info</a></li>
+    <li><a href="cv.html">CV</a></li>
   </ul>
 </nav>
 
-<!-- Hero -->
-<section id="hero">
-  <div class="container">
-    <h1 class="hero-name">Hao-Jui Kuan <span class="hero-chinese">官顥叡</span></h1>
-    <p class="hero-title">
-      <strong>Postdoctoral Researcher</strong> &mdash; University of Illinois Urbana-Champaign
-    </p>
-    <p class="hero-keywords">
-      <span>Gravitational waves</span> &nbsp;&middot;&nbsp;
-      <span>Neutron star mergers</span> &nbsp;&middot;&nbsp;
-      <span>Modified gravity</span>
-    </p>
-    <a href="mailto:hjkuan@illinois.edu" class="btn">Contact</a>
-  </div>
-</section>
-
-<!-- About -->
+<!-- Intro: hero + about -->
 <section id="about">
   <div class="container">
-    <h2>About</h2>
-    <div class="about-grid">
-      <img src="images/pic02.jpg" alt="Hao-Jui Kuan" class="about-photo">
-      <div class="about-text">
-        <p>
-          I work on gravitational physics. I completed my Bachelor's degree with double majors
-          in Physics and Mathematics. I then joined the group of Prof. Chao-Qiang Geng in 
-          Hsinchu for doctoral training. In 2019, I pursued a joint PhD between Nat'l Tsing 
-          Hua University (Taiwan) and the University of T&uuml;bingen (Germany), working in 
-          Prof. Kostas Kokkotas' group. I received the PhD degree in early 2023. I subsequently
-          joined the Albert Einstein Institute in Golm under Prof. Masaru Shibata. I am currently 
-          a postdoctoral researcher at the University of Illinois Urbana-Champaign, working with
-          Prof. Nicolas Yunes.
+    <div class="intro-grid">
+      <img src="images/pic02.jpg" alt="Hao-Jui Kuan" class="intro-photo">
+      <div class="intro-text">
+        <h1 class="hero-name">Hao-Jui Kuan <span class="hero-chinese">官顥叡</span></h1>
+        <p class="hero-title">
+          <strong>Postdoctoral Researcher</strong> &mdash; University of Illinois Urbana-Champaign
+        </p>
+        <p class="hero-keywords">
+          <span>Gravitational waves</span> &nbsp;&middot;&nbsp;
+          <span>Neutron star mergers</span> &nbsp;&middot;&nbsp;
+          <span>Modified gravity</span>
+        </p>
+        <p class="bio">
+          I am a Postdoctoral Researcher in gravitational physics at the University of Illinois
+          Urbana-Champaign, working with Prof. Nicolas Yunes. Before coming to UIUC, I held a
+          postdoctoral position at the Albert Einstein Institute in Golm with Prof. Masaru Shibata.
+          I received my joint Ph.D. in 2023 from National Tsing Hua University and the University
+          of T&uuml;bingen, where I was advised by Prof. Chao-Qiang Geng and Prof. Kostas Kokkotas,
+          following a B.S. in Physics and Mathematics.
         </p>
         <div class="link-row">
+          <a href="mailto:hjkuan@illinois.edu" class="link-btn">Email</a>
+          <a href="cv.html" class="link-btn">CV</a>
           <a href="https://orcid.org/0000-0002-3480-3448" class="link-btn">ORCID</a>
           <a href="https://inspirehep.net/authors/1852428?ui-citation-summary=true" class="link-btn">INSPIRE</a>
           <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-3480-3448&sort=date%20desc%2C%20bibcode%20desc&p_=0" class="link-btn">NASA ADS</a>
+          <a href="https://github.com/Hao-Jui" class="link-btn">GitHub</a>
         </div>
+        <p class="recent">
+          <span class="recent-label">Recent</span>
+          Paper on quark stars vs. neutron stars published in
+          <a href="2026-27/w92f-58lx.pdf">Phys. Rev. D 114, 043058</a> (Aug 2026)<br>
+          <span class="recent-label">Upcoming</span>
+          Gravity seminar at the Perimeter Institute, Nov 5, 2026
+        </p>
       </div>
     </div>
   </div>
@@ -531,8 +579,8 @@
         </span>
       </button>
       <div class="pub-list">
-        <div class="pub-item"><span class="pub-num">27</span><a href="/2026-27/w92f-58lx.pdf">Difference between quark stars and neutron stars in universal relations and their effect on gravitational waves</a></div>
-        <div class="pub-item"><span class="pub-num">28</span><a href="/2026-27/Donutization_Inside_Neutron_Stars.pdf">Donutization Inside Neutron Stars: Shell-Localized Scalar Fields</a></div>
+        <div class="pub-item"><span class="pub-num">27.</span><div class="pub-entry"><div class="pub-ref">D. Gao, <b>H.-J. Kuan</b>, Y. Zhou, Z. Miao, M.-Z. Han, Y. Gao, C. Zhang, and E. Zhou, Phys. Rev. D 114, 043058 (2026)</div><div class="pub-title">Difference between quark stars and neutron stars in universal relations and their effect on gravitational waves <span class="pub-pdf">(pdf file: <a href="2026-27/w92f-58lx.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">28.</span><div class="pub-entry"><div class="pub-ref">In preparation</div><div class="pub-title">Donutization Inside Neutron Stars: Shell-Localized Scalar Fields <span class="pub-pdf">(pdf file: <a href="2026-27/Donutization_Inside_Neutron_Stars.pdf">pdf</a>)</span></div></div></div>
       </div>
     </div>
 
@@ -545,17 +593,17 @@
         </span>
       </button>
       <div class="pub-list">
-        <div class="pub-item"><span class="pub-num">16</span><a href="/2024-25/PhysRevD.109.103023.pdf">Magnetic amplification in premerger neutron stars through resonance-induced magnetorotational instabilities</a></div>
-        <div class="pub-item"><span class="pub-num">17</span><a href="/2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf">Magnetar-powered neutrinos and magnetic moment signatures at IceCube</a></div>
-        <div class="pub-item"><span class="pub-num">18</span><a href="/2024-25/PhysRevD.110.104018.pdf">Binary neutron star mergers in massive scalar-tensor theory: Properties of postmerger remnants</a></div>
-        <div class="pub-item"><span class="pub-num">19</span><a href="/2024-25/universe-10-00441.pdf">Premerger Phenomena in Neutron Star Binary Coalescences</a></div>
-        <div class="pub-item"><span class="pub-num">20</span><a href="/2024-25/PhysRevLett.134.151402.pdf">Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory</a></div>
-        <div class="pub-item"><span class="pub-num">21</span><a href="/2024-25/PhysRevD.111.104030.pdf">Axisymmetric stability of neutron stars as extreme rotators in massive scalar-tensor theory</a></div>
-        <div class="pub-item"><span class="pub-num">22</span><a href="/2024-25/j3zk-z17h.pdf">Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity</a></div>
-        <div class="pub-item"><span class="pub-num">23</span><a href="/2024-25/aa54890-25.pdf">Non-linear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars</a></div>
-        <div class="pub-item"><span class="pub-num">24</span><a href="/2024-25/nbk7-8kts.pdf">Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries</a></div>
-        <div class="pub-item"><span class="pub-num">25</span><a href="/2024-25/w8gq-3d54.pdf">Convective stability analysis of massive neutron stars formed in binary mergers</a></div>
-        <div class="pub-item"><span class="pub-num">26</span><a href="/2024-25/2506.02115v1.pdf">The error budget of binary neutron star merger simulations for configurations with high spin</a></div>
+        <div class="pub-item"><span class="pub-num">16.</span><div class="pub-entry"><div class="pub-ref">A. G. Suvorov, <b>H.-J. Kuan</b>, A. Reboul-Salze, and K. D. Kokkotas, Phys. Rev. D 109, 103023 (2024)</div><div class="pub-title">Magnetic amplification in premerger neutron stars through resonance-induced magnetorotational instabilities <span class="pub-pdf">(pdf file: <a href="2024-25/PhysRevD.109.103023.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">17.</span><div class="pub-entry"><div class="pub-ref">V. Brdar, T. Cheng, <b>H.-J. Kuan</b>, and Y.-Y. Li, J. Cosmol. Astropart. Phys. 07, 026 (2024)</div><div class="pub-title">Magnetar-powered neutrinos and magnetic moment signatures at IceCube <span class="pub-pdf">(pdf file: <a href="2024-25/Brdar_2024_J._Cosmol._Astropart._Phys._2024_026.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">18.</span><div class="pub-entry"><div class="pub-ref">A. T.-L. Lam, <b>H.-J. Kuan</b>, M. Shibata, K. Van Aelst, and K. Kiuchi, Phys. Rev. D 110, 104018 (2024)</div><div class="pub-title">Binary neutron star mergers in massive scalar-tensor theory: Properties of postmerger remnants <span class="pub-pdf">(pdf file: <a href="2024-25/PhysRevD.110.104018.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">19.</span><div class="pub-entry"><div class="pub-ref">A. G. Suvorov, <b>H.-J. Kuan</b>, and K. D. Kokkotas, Universe 10, 441 (2024)</div><div class="pub-title">Premerger Phenomena in Neutron Star Binary Coalescences <span class="pub-pdf">(pdf file: <a href="2024-25/universe-10-00441.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">20.</span><div class="pub-entry"><div class="pub-ref">A. T.-L. Lam, Y. Gao, <b>H.-J. Kuan</b>, M. Shibata, K. Van Aelst, and K. Kiuchi, Phys. Rev. Lett. 134, 151402 (2025)</div><div class="pub-title">Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory <span class="pub-pdf">(pdf file: <a href="2024-25/PhysRevLett.134.151402.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">21.</span><div class="pub-entry"><div class="pub-ref">A. T.-L. Lam, K. V. Staykov, <b>H.-J. Kuan</b>, D. D. Doneva, and S. S. Yazadjiev, Phys. Rev. D 111, 104030 (2025)</div><div class="pub-title">Axisymmetric stability of neutron stars as extreme rotators in massive scalar-tensor theory <span class="pub-pdf">(pdf file: <a href="2024-25/PhysRevD.111.104030.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">22.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, K. Kiuchi, and M. Shibata, Phys. Rev. Lett. 135, 141403 (2025)</div><div class="pub-title">Tidal Resonance in Binary Neutron Star Inspirals: A High-Precision Study in Numerical Relativity <span class="pub-pdf">(pdf file: <a href="2024-25/j3zk-z17h.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">23.</span><div class="pub-entry"><div class="pub-ref">A. Reboul-Salze, A. Astoul, <b>H.-J. Kuan</b>, and A. G. Suvorov, Astron. Astrophys. 704, A265 (2025)</div><div class="pub-title">Non-linear saturation of gravito-inertial modes excited by tidal resonances in binary neutron stars <span class="pub-pdf">(pdf file: <a href="2024-25/aa54890-25.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">24.</span><div class="pub-entry"><div class="pub-ref">Y. Gao, <b>H.-J. Kuan</b>, C.-J. Xia, H. O. Silva, and M. Shibata, Phys. Rev. D 112, 123006 (2025)</div><div class="pub-title">Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries <span class="pub-pdf">(pdf file: <a href="2024-25/nbk7-8kts.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">25.</span><div class="pub-entry"><div class="pub-ref">Y. Gao, K. Hayashi, K. Kiuchi, A. T.-L. Lam, <b>H.-J. Kuan</b>, and M. Shibata, Phys. Rev. D 113, 023011 (2026)</div><div class="pub-title">Convective stability analysis of massive neutron stars formed in binary mergers <span class="pub-pdf">(pdf file: <a href="2024-25/w8gq-3d54.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">26.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, I. Markin, M. Ujevic, T. Dietrich, K. Kiuchi, M. Shibata, and W. Tichy, arXiv:2506.02115 (2025)</div><div class="pub-title">The error budget of binary neutron star merger simulations for configurations with high spin <span class="pub-pdf">(pdf file: <a href="2024-25/2506.02115v1.pdf">pdf</a>)</span></div></div></div>
       </div>
     </div>
 
@@ -568,14 +616,14 @@
         </span>
       </button>
       <div class="pub-list">
-        <div class="pub-item"><span class="pub-num">8</span><a href="/2022-23/PhysRevLett.129.121104.pdf">Gravitational Waves from Accretion-Induced Descalarization in Massive Scalar-Tensor Theory</a></div>
-        <div class="pub-item"><span class="pub-num">9</span><a href="/2022-23/stac1101.pdf">Constraining equation-of-state groups from g-mode asteroseismology</a></div>
-        <div class="pub-item"><span class="pub-num">10</span><a href="/2022-23/PhysRevD.106.064052.pdf">f-mode imprints on gravitational waves from coalescing binaries involving aligned spinning neutron stars</a></div>
-        <div class="pub-item"><span class="pub-num">11</span><a href="/2022-23/aa44082-22.pdf">Quasi-periodic oscillations in precursor flares via seismic aftershocks from resonant shattering</a></div>
-        <div class="pub-item"><span class="pub-num">12</span><a href="/2022-23/PhysRevD.108.063033.pdf">Dynamical scalarization during neutron star mergers in scalar-Gauss-Bonnet theory</a></div>
-        <div class="pub-item"><span class="pub-num">13</span><a href="/2022-23/aa46658-23.pdf">Measuring spin in coalescing binaries of neutron stars that show double precursors</a></div>
-        <div class="pub-item"><span class="pub-num">14</span><a href="/2022-23/PhysRevD.108.064057.pdf">Binary neutron star mergers in massive scalar-tensor theory: Quasiequilibrium states and dynamical enhancement of the scalarization</a></div>
-        <div class="pub-item"><span class="pub-num">15</span><a href="/2022-23/PhysRevD.108.063026.pdf">Last three seconds: Packed message delivered by tides in binary neutron star mergers</a></div>
+        <div class="pub-item"><span class="pub-num">8.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, A. G. Suvorov, D. D. Doneva, and S. S. Yazadjiev, Phys. Rev. Lett. 129, 121104 (2022)</div><div class="pub-title">Gravitational Waves from Accretion-Induced Descalarization in Massive Scalar-Tensor Theory <span class="pub-pdf">(pdf file: <a href="2022-23/PhysRevLett.129.121104.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">9.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, C. J. Kr&uuml;ger, A. G. Suvorov, and K. D. Kokkotas, Mon. Not. R. Astron. Soc. 513, 4045 (2022)</div><div class="pub-title">Constraining equation-of-state groups from g-mode asteroseismology <span class="pub-pdf">(pdf file: <a href="2022-23/stac1101.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">10.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b> and K. D. Kokkotas, Phys. Rev. D 106, 064052 (2022)</div><div class="pub-title">f-mode imprints on gravitational waves from coalescing binaries involving aligned spinning neutron stars <span class="pub-pdf">(pdf file: <a href="2022-23/PhysRevD.106.064052.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">11.</span><div class="pub-entry"><div class="pub-ref">A. G. Suvorov, <b>H.-J. Kuan</b>, and K. D. Kokkotas, Astron. Astrophys. 664, A177 (2022)</div><div class="pub-title">Quasi-periodic oscillations in precursor flares via seismic aftershocks from resonant shattering <span class="pub-pdf">(pdf file: <a href="2022-23/aa44082-22.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">12.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, A. T.-L. Lam, D. D. Doneva, S. S. Yazadjiev, M. Shibata, and K. Kiuchi, Phys. Rev. D 108, 063033 (2023)</div><div class="pub-title">Dynamical scalarization during neutron star mergers in scalar-Gauss-Bonnet theory <span class="pub-pdf">(pdf file: <a href="2022-23/PhysRevD.108.063033.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">13.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, A. G. Suvorov, and K. D. Kokkotas, Astron. Astrophys. 676, A59 (2023)</div><div class="pub-title">Measuring spin in coalescing binaries of neutron stars that show double precursors <span class="pub-pdf">(pdf file: <a href="2022-23/aa46658-23.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">14.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, K. V. Van Aelst, A. T.-L. Lam, and M. Shibata, Phys. Rev. D 108, 064057 (2023)</div><div class="pub-title">Binary neutron star mergers in massive scalar-tensor theory: Quasiequilibrium states and dynamical enhancement of the scalarization <span class="pub-pdf">(pdf file: <a href="2022-23/PhysRevD.108.064057.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">15.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b> and K. D. Kokkotas, Phys. Rev. D 108, 063026 (2023)</div><div class="pub-title">Last three seconds: Packed message delivered by tides in binary neutron star mergers <span class="pub-pdf">(pdf file: <a href="2022-23/PhysRevD.108.063026.pdf">pdf</a>)</span></div></div></div>
       </div>
     </div>
 
@@ -588,13 +636,26 @@
         </span>
       </button>
       <div class="pub-list">
-        <div class="pub-item"><span class="pub-num">1</span><a href="/2020-21/Geng_2020_Class._Quantum_Grav._37_115001.pdf">Viable constraint on scalar field in scalar&ndash;tensor theory</a></div>
-        <div class="pub-item"><span class="pub-num">2</span><a href="/2020-21/s10052-020-8359-y.pdf">Inverse-chirp imprint of gravitational wave signals in scalar tensor theory</a></div>
-        <div class="pub-item"><span class="pub-num">3</span><a href="/2020-21/PhysRevLett.127.161103.pdf">Dynamical Formation of Scalarized Black Holes and Neutron Stars through Stellar Core Collapse</a></div>
-        <div class="pub-item"><span class="pub-num">4</span><a href="/2020-21/PhysRevD.104.124013.pdf">Nonlinear evolution and nonuniqueness of scalarized neutron stars</a></div>
-        <div class="pub-item"><span class="pub-num">5</span><a href="/2020-21/Huang_2021_Class._Quantum_Grav._38_245006.pdf">Scalar gravitational wave signals from core collapse in massive scalar&ndash;tensor gravity with triple-scalar interactions</a></div>
-        <div class="pub-item"><span class="pub-num">6</span><a href="/2020-21/stab1898.pdf">General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars &ndash; I. Theoretical framework and crust breaking</a></div>
-        <div class="pub-item"><span class="pub-num">7</span><a href="/2020-21/stab2658.pdf">General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars &ndash; II. As triggers for precursor flares of short gamma-ray bursts</a></div>
+        <div class="pub-item"><span class="pub-num">1.</span><div class="pub-entry"><div class="pub-ref">C. Q. Geng, <b>H.-J. Kuan</b>, and L. W. Luo, Class. Quantum Grav. 37, 115001 (2020)</div><div class="pub-title">Viable constraint on scalar field in scalar&ndash;tensor theory <span class="pub-pdf">(pdf file: <a href="2020-21/Geng_2020_Class._Quantum_Grav._37_115001.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">2.</span><div class="pub-entry"><div class="pub-ref">C. Q. Geng, <b>H.-J. Kuan</b>, and L. W. Luo, Eur. Phys. J. C 80, 780 (2020)</div><div class="pub-title">Inverse-chirp imprint of gravitational wave signals in scalar tensor theory <span class="pub-pdf">(pdf file: <a href="2020-21/s10052-020-8359-y.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">3.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, D. D. Doneva, and S. S. Yazadjiev, Phys. Rev. Lett. 127, 161103 (2021)</div><div class="pub-title">Dynamical Formation of Scalarized Black Holes and Neutron Stars through Stellar Core Collapse <span class="pub-pdf">(pdf file: <a href="2020-21/PhysRevLett.127.161103.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">4.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, J. Singh, D. D. Doneva, S. S. Yazadjiev, and K. D. Kokkotas, Phys. Rev. D 104, 124013 (2021)</div><div class="pub-title">Nonlinear evolution and nonuniqueness of scalarized neutron stars <span class="pub-pdf">(pdf file: <a href="2020-21/PhysRevD.104.124013.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">5.</span><div class="pub-entry"><div class="pub-ref">D. Huang, C. Q. Geng, and <b>H.-J. Kuan</b>, Class. Quantum Grav. 38, 245006 (2021)</div><div class="pub-title">Scalar gravitational wave signals from core collapse in massive scalar&ndash;tensor gravity with triple-scalar interactions <span class="pub-pdf">(pdf file: <a href="2020-21/Huang_2021_Class._Quantum_Grav._38_245006.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">6.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, A. G. Suvorov, and K. D. Kokkotas, Mon. Not. R. Astron. Soc. 506, 2985 (2021)</div><div class="pub-title">General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars &ndash; I. Theoretical framework and crust breaking <span class="pub-pdf">(pdf file: <a href="2020-21/stab1898.pdf">pdf</a>)</span></div></div></div>
+        <div class="pub-item"><span class="pub-num">7.</span><div class="pub-entry"><div class="pub-ref"><b>H.-J. Kuan</b>, A. G. Suvorov, and K. D. Kokkotas, Mon. Not. R. Astron. Soc. 508, 1732 (2021)</div><div class="pub-title">General-relativistic treatment of tidal g-mode resonances in coalescing binaries of neutron stars &ndash; II. As triggers for precursor flares of short gamma-ray bursts <span class="pub-pdf">(pdf file: <a href="2020-21/stab2658.pdf">pdf</a>)</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="pub-group pub-group-collab" id="pg-collab">
+      <button class="pub-toggle" onclick="togglePub('pg-collab')">
+        <span class="pub-toggle-label">Collaboration papers</span>
+        <span class="pub-toggle-meta">
+          <span class="pub-count">1 paper</span>
+          <span class="chevron"></span>
+        </span>
+      </button>
+      <div class="pub-list">
+        <div class="pub-item"><span class="pub-num">C1.</span><div class="pub-entry"><div class="pub-ref">A. Abac et al. (Einstein Telescope Collaboration, incl. <b>H.-J. Kuan</b>), arXiv:2503.12263 (2025), ET-0036C-25</div><div class="pub-title">The Science of the Einstein Telescope <span class="pub-pdf">(pdf file: <a href="https://arxiv.org/pdf/2503.12263">pdf</a>)</span></div></div></div>
       </div>
     </div>
 
@@ -608,33 +669,25 @@
 <section id="software">
   <div class="container">
     <h2>Software</h2>
-    <div class="sw-grid">
-    <div class="sw-card">
-      <h3>Celephais</h3>
-      <p>A Kadath-based numerical-relativity code and sibling of FUKa, optimized for binary
-      neutron star configurations. Features a 10&times; speedup, 70% memory reduction via a
-      sparse matrix solver, and a new 2D axisymmetric solver.</p>
-      <a href="celephais.html" class="btn">Learn more</a>
-    </div>
-    <div class="sw-card">
-      <h3>GRASS</h3>
-      <p>General Relativistic Axisymmetric Spacetime Solver. Computes uniformly and
-      differentially rotating neutron-star equilibria on a compactified meridional grid
-      under General Relativity or scalar-tensor gravity, with tabulated EOS handling and
-      adaptive field relaxation.</p>
-      <a href="grass.html" class="btn">Learn more</a>
-    </div>
-    </div>
-  </div>
-</section>
-
-<!-- Info -->
-<section id="info">
-  <div class="container">
-    <h2>Downloads</h2>
-    <div class="info-row">
-      <a href="cv.pdf" class="btn">Curriculum Vitae</a>
-      <a href="publication.pdf" class="btn">Publication List</a>
+    <div class="sw-list">
+      <div class="sw-row">
+        <div class="sw-name">Celephais<span class="sw-sub">Kadath-based numerical-relativity code</span></div>
+        <p class="sw-desc">A sibling of FUKA optimized for binary neutron star configurations. Features a
+        10&times; speedup, 70% memory reduction via a sparse matrix solver, and a new 2D axisymmetric solver.</p>
+        <div class="sw-links">
+          <a href="celephais.html">Documentation &rarr;</a>
+          <a href="https://github.com/Hao-Jui/Celephais">GitHub &rarr;</a>
+        </div>
+      </div>
+      <div class="sw-row">
+        <div class="sw-name">GRASS<span class="sw-sub">General Relativistic Axisymmetric Spacetime Solver</span></div>
+        <p class="sw-desc">Computes uniformly and differentially rotating neutron-star equilibria on a
+        compactified meridional grid under General Relativity or scalar-tensor gravity, with tabulated
+        EOS handling and adaptive field relaxation.</p>
+        <div class="sw-links">
+          <a href="grass.html">Documentation &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -643,7 +696,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <span>&copy; Hao-Jui Kuan 2025</span>
+      <span>&copy; <span id="year">2026</span> Hao-Jui Kuan</span>
       <a href="mailto:hjkuan@illinois.edu">hjkuan@illinois.edu</a>
     </div>
   </div>
@@ -653,6 +706,8 @@
   function togglePub(id) {
     document.getElementById(id).classList.toggle('open');
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
